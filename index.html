@@ -259,6 +259,16 @@ section{position:relative}
 .vibe-item .em{font-size:34px;margin-bottom:16px;display:block}
 .vibe-item h3{color:#fff;font-size:1.35rem;margin-bottom:10px}
 .vibe-item p{color:#aebec7;font-size:14.5px}
+.prices{margin-top:34px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:var(--radius-lg);padding:32px 36px;display:grid;grid-template-columns:1.2fr 1fr;gap:36px}
+.prices h3{color:#fff;font-size:1.6rem;margin-bottom:16px}
+.p-row{display:flex;justify-content:space-between;gap:16px;padding:12px 0;border-bottom:1px dashed rgba(255,255,255,.16)}
+.p-row>span:first-child{color:#dce7ec;font-weight:600}
+.p-row .p-val{color:var(--gold);text-align:right;font-size:15px}
+.p-note{color:#9fb2bc;font-size:13.5px;margin-top:14px}
+.p-near h4{color:var(--gold);font-family:var(--font-body);font-size:13px;letter-spacing:.08em;text-transform:uppercase;margin-bottom:14px}
+.p-near div{display:flex;justify-content:space-between;gap:12px;color:#dce7ec;font-size:14.5px;padding:10px 0;border-bottom:1px dashed rgba(255,255,255,.12)}
+.p-near div span:last-child{color:#fff;font-weight:600;white-space:nowrap}
+@media(max-width:680px){.prices{grid-template-columns:1fr;gap:26px;padding:26px}}
 
 /* ============ CONTACT ============ */
 .contact{padding:74px 0;background:var(--cream)}
@@ -414,10 +424,10 @@ footer{background:var(--navy-deep);color:#cdd9df;padding:72px 0 30px}
 
 <!-- ============ QUICK FACTS ============ -->
 <div class="facts">
-  <div class="f"><b>★★★★★</b><span data-i18n="fact_1">Experiență de neuitat</span></div>
-  <div class="f"><b>♨</b><span data-i18n="fact_2">Piscină & jacuzzi</span></div>
-  <div class="f"><b>♫</b><span data-i18n="fact_3">Petreceri & evenimente</span></div>
-  <div class="f"><b>🌳</b><span data-i18n="fact_4">Curte & terasă</span></div>
+  <div class="f"><b>12–14</b><span data-i18n="fact_1">persoane</span></div>
+  <div class="f"><b>4</b><span data-i18n="fact_2">dormitoare</span></div>
+  <div class="f"><b>3</b><span data-i18n="fact_3">băi</span></div>
+  <div class="f"><b>2000</b><span data-i18n="fact_4">lei / noapte</span></div>
 </div>
 
 <!-- ============ ABOUT ============ -->
@@ -564,21 +574,34 @@ footer{background:var(--navy-deep);color:#cdd9df;padding:72px 0 30px}
   <span class="nav-arrow next" id="lbNext">›</span>
 </div>
 
-<!-- ============ VIBE ============ -->
-<section class="vibe">
+<!-- ============ DETALII & TARIFE ============ -->
+<section class="vibe" id="detalii">
   <div class="wrap">
     <div class="center reveal">
-      <span class="eyebrow-2" data-i18n="vibe_eyebrow">Atmosfera</span>
-      <h2 data-i18n="vibe_title">De ce e specială Casa din Deal</h2>
-      <p class="sub" data-i18n="vibe_sub">Un loc care îmbină natura cu buna dispoziție — exact ce ai nevoie.</p>
+      <span class="eyebrow-2" style="color:var(--gold)" data-i18n="fac_eyebrow">Detalii</span>
+      <h2 data-i18n="fac_title">Ce include vila</h2>
+      <p class="sub" data-i18n="fac_sub">Toată casa, doar pentru voi — până la 12–14 persoane.</p>
     </div>
     <div class="vibe-grid">
-      <div class="vibe-item reveal"><span class="em">🏠</span><h3 data-i18n="vibe1_t">Casa întreagă</h3><p data-i18n="vibe1_p">O închiriezi integral — fără vecini, doar grupul tău.</p></div>
-      <div class="vibe-item reveal"><span class="em">♨</span><h3 data-i18n="vibe2_t">Piscină & jacuzzi</h3><p data-i18n="vibe2_p">Relaxare în curte, vara și în serile răcoroase.</p></div>
-      <div class="vibe-item reveal"><span class="em">🍳</span><h3 data-i18n="vibe3_t">Bucătărie utilată</h3><p data-i18n="vibe3_p">Gătești ca acasă, cu tot ce ai nevoie.</p></div>
-      <div class="vibe-item reveal"><span class="em">🌳</span><h3 data-i18n="vibe4_t">Curte mare</h3><p data-i18n="vibe4_p">Spațiu pentru grătar, joacă și petreceri.</p></div>
-      <div class="vibe-item reveal"><span class="em">🥂</span><h3 data-i18n="vibe5_t">Bună pentru petreceri</h3><p data-i18n="vibe5_p">Intimitate și loc suficient pentru evenimentele tale.</p></div>
-      <div class="vibe-item reveal"><span class="em">🏡</span><h3 data-i18n="vibe6_t">Confort ca acasă</h3><p data-i18n="vibe6_p">Tot ce ai nevoie ca să te simți bine.</p></div>
+      <div class="vibe-item reveal"><span class="em">🛏</span><h3 data-i18n="fac1_t">4 dormitoare · 3 băi</h3><p data-i18n="fac1_p">Living, bucătărie complet utilată și o terasă mare — loc pentru 12–14 persoane.</p></div>
+      <div class="vibe-item reveal"><span class="em">☀️</span><h3 data-i18n="fac2_t">Vara: piscină încălzită</h3><p data-i18n="fac2_p">Piscină încălzită cu șezlonguri, pentru zilele călduroase.</p></div>
+      <div class="vibe-item reveal"><span class="em">♨</span><h3 data-i18n="fac3_t">Iarna: ciubăr & saună</h3><p data-i18n="fac3_p">Ciubăr cald și saună pentru sezonul rece.</p></div>
+      <div class="vibe-item reveal"><span class="em">🔥</span><h3 data-i18n="fac4_t">Grill & ceaun</h3><p data-i18n="fac4_p">Grătar și ceaun în curte, plus loc de joacă pentru copii.</p></div>
+      <div class="vibe-item reveal"><span class="em">📺</span><h3 data-i18n="fac5_t">Smart TV & Wi-Fi</h3><p data-i18n="fac5_p">Wi-Fi gratuit, Smart TV, aparat de cafea, cuptor, plită, microunde, frigider.</p></div>
+      <div class="vibe-item reveal"><span class="em">🚗</span><h3 data-i18n="fac6_t">Parcare privată</h3><p data-i18n="fac6_p">Parcare gratuită în curte. Chiar dacă și noi le iubim, nu acceptăm animale de companie.</p></div>
+    </div>
+    <div class="prices reveal">
+      <div>
+        <h3 data-i18n="price_title">Tarife</h3>
+        <div class="p-row"><span data-i18n="price_wd">Luni–Joi</span><span class="p-val" data-i18n="price_wd_val">2000 lei / noapte · 3000 lei / 2 nopți</span></div>
+        <div class="p-row"><span data-i18n="price_we">Vineri–Duminică</span><span class="p-val" data-i18n="price_we_val">2000 lei / noapte · 3500 lei / 2 nopți</span></div>
+        <p class="p-note" data-i18n="price_note">Prețul include toată vila (4 dormitoare, living, 3 băi, bucătărie, terasă).</p>
+      </div>
+      <div class="p-near">
+        <h4 data-i18n="near_title">În zonă</h4>
+        <div><span data-i18n="near1">Ștrandul termal Tășnad</span><span>6 km</span></div>
+        <div><span data-i18n="near2">Castelul Károlyi, Carei</span><span>27 km</span></div>
+      </div>
     </div>
   </div>
 </section>
@@ -595,6 +618,7 @@ footer{background:var(--navy-deep);color:#cdd9df;padding:72px 0 30px}
       <div class="contact-card reveal">
         <h3 data-i18n="contact_card_t">Date de contact</h3>
         <div class="c-row"><span class="ic">📍</span><div><b data-i18n="contact_loc_b">Locație</b><span data-i18n="contact_loc_s">Santău, jud. Satu Mare, România</span></div></div>
+        <div class="c-row"><span class="ic">🕒</span><div><b data-i18n="contact_check_b">Check-in / Check-out</b><span data-i18n="contact_check_s">Se stabilește la rezervare</span></div></div>
         <div class="c-row"><span class="ic">📞</span><div><b data-i18n="contact_phone_b">Telefon</b><a href="tel:+40747637077">+40 747 637 077</a></div></div>
         <div class="c-row"><span class="ic">💬</span><div><b>WhatsApp</b><a href="#WHATSAPP#" target="_blank" rel="noopener" data-i18n="contact_wa">Scrie-ne pe WhatsApp</a></div></div>
         <div class="c-row"><span class="ic">📷</span><div><b data-i18n="contact_social_b">Social media</b><span data-i18n="contact_social_s">Urmărește-ne pentru noutăți</span></div></div>
@@ -665,12 +689,11 @@ footer{background:var(--navy-deep);color:#cdd9df;padding:72px 0 30px}
 
 <!-- ============ LEGAL MODALS ============ -->
 <div class="modal" id="mImpr"><div class="modal-box"><span class="mclose">×</span>
-  <h3 data-i18n="impr_t">Date de identificare</h3>
-  <p data-i18n="impr_p">Datele oficiale ale firmei vor fi completate aici.</p>
+  <h3 data-i18n="impr_t">Date firmă</h3>
+  <p data-i18n="impr_p">Casa din Deal — vilă de închiriat în Santău, jud. Satu Mare. Ne poți contacta direct pentru rezervări și informații.</p>
   <h4 data-i18n="impr_h1">Denumire</h4><p>Casa din Deal — Santău</p>
   <h4 data-i18n="impr_h2">Adresă</h4><p>Santău, jud. Satu Mare, România</p>
   <h4 data-i18n="impr_h3">Contact</h4><p>+40 747 637 077 · WhatsApp</p>
-  <h4 data-i18n="impr_h4">CUI / Reg. Com.</h4><p data-i18n="impr_cui">— de completat —</p>
 </div></div>
 
 <div class="modal" id="mPriv"><div class="modal-box"><span class="mclose">×</span>
@@ -711,7 +734,7 @@ ro:{
  hero_eyebrow:"Casă de închiriat · Santău",hero_h1:"Casa din Deal",hero_tag:"Casa ta de vacanță în Santău",
  hero_lead:"Închiriezi toată casa doar pentru voi: piscină în curte, jacuzzi pentru serile răcoroase și mult loc de stat împreună. Voi aduceți gașca sau familia — noi avem grijă să vă simțiți ca acasă.",
  hero_wa:"Scrie-ne pe WhatsApp",hero_gallery:"Vezi galeria",scroll:"Scroll",
- fact_1:"Experiență de neuitat",fact_2:"Piscină & jacuzzi",fact_3:"Petreceri & evenimente",fact_4:"Curte & terasă",
+ fact_1:"persoane",fact_2:"dormitoare",fact_3:"băi",fact_4:"lei / noapte",
  about_eyebrow:"Ne pare bine că ai venit",about_title:"O casă în care te simți imediat acasă",
  about_p1:"Casa din Deal e o casă mare și primitoare, pe care o iei cu totul — cu camerele ei calde, bucătăria în care chiar îți place să gătești, livingul unde stați de vorbă până târziu și curtea cu piscină, făcută pentru zile leneșe de vară.",
  about_p2:"Veniți cu familia, cu prietenii sau cu amândouă — nouă ne place să fim gazde și să vă lăsăm să vă faceți amintiri, în ritmul vostru.",
@@ -728,9 +751,9 @@ ro:{
  stay_p1:"Camerele sunt calde și liniștite, iar bucătăria e complet utilată — gătiți împreună, mâncați pe îndelete și vă odihniți fără griji. Spațiu cât să nu vă călcați pe picioare.",
  stay_f1:"<b>Camere confortabile</b> pentru grupuri și familii.",stay_f2:"<b>Bucătărie complet utilată</b> și un living în care încăpeți toți.",stay_f3:"<b>Wi-Fi, parcare</b> și tot ce vă trebuie ca să nu vă gândiți la nimic.",
  stay_cta:"Întreabă-ne de disponibilitate",
- wellness_eyebrow:"Piscină & Relaxare",wellness_title:"Curtea în care se stă cel mai bine",
- wellness_p:"Ziua, un plonjon în piscină. Seara, jacuzzi cald și stele deasupra. Între ele, un grătar pornit și oameni dragi în jur — cam așa arată o zi bună la Casa din Deal.",
- wellness_s1:"Piscină în curte",wellness_s2:"Jacuzzi",wellness_s3:"Grătar & foc",
+ wellness_eyebrow:"Piscină · Ciubăr · Saună",wellness_title:"Vara la piscină, iarna la ciubăr",
+ wellness_p:"Vara vă răcoriți în piscina încălzită, cu șezlonguri la soare. În sezonul rece vă încălziți în ciubăr și la saună. Curtea mare rămâne a voastră tot anul.",
+ wellness_s1:"Piscină încălzită (vara)",wellness_s2:"Ciubăr & saună (iarna)",wellness_s3:"Grătar & ceaun",
  events_eyebrow:"Evenimente & Petreceri",events_title:"Locul unde petrecerea iese bine",
  events_p1:"Toată casa și curtea sunt ale voastre, în intimitate deplină. Puneți muzica, aprindeți grătarul și bucurați-vă de oaspeți — de spațiu ne-am ocupat noi.",
  events_p2:"Spuneți-ne ce puneți la cale și găsim împreună cea mai bună variantă.",
@@ -747,12 +770,20 @@ ro:{
  contact_eyebrow:"Rezervări & Contact",contact_title:"Hai să vă facem loc",contact_sub:"Un mesaj pe WhatsApp și vă spunem repede ce date sunt libere. Vă răspundem cu drag.",
  contact_card_t:"Date de contact",contact_loc_b:"Locație",contact_loc_s:"Santău, jud. Satu Mare, România",
  contact_phone_b:"Telefon",contact_wa:"Scrie-ne pe WhatsApp",contact_social_b:"Social media",contact_social_s:"Urmărește-ne pentru noutăți",contact_wa_btn:"Rezervă acum pe WhatsApp",
+ fac_eyebrow:"Detalii",fac_title:"Ce include vila",fac_sub:"Toată casa, doar pentru voi — până la 12–14 persoane.",
+ fac1_t:"4 dormitoare · 3 băi",fac1_p:"Living, bucătărie complet utilată și o terasă mare — loc pentru 12–14 persoane.",
+ fac2_t:"Vara: piscină încălzită",fac2_p:"Piscină încălzită cu șezlonguri, pentru zilele călduroase.",
+ fac3_t:"Iarna: ciubăr & saună",fac3_p:"Ciubăr cald și saună pentru sezonul rece.",
+ fac4_t:"Grill & ceaun",fac4_p:"Grătar și ceaun în curte, plus loc de joacă pentru copii.",
+ fac5_t:"Smart TV & Wi-Fi",fac5_p:"Wi-Fi gratuit, Smart TV, aparat de cafea, cuptor, plită, microunde, frigider.",
+ fac6_t:"Parcare privată",fac6_p:"Parcare gratuită în curte. Chiar dacă și noi le iubim, nu acceptăm animale de companie.",
+ price_title:"Tarife",price_wd:"Luni–Joi",price_we:"Vineri–Duminică",price_wd_val:"2000 lei / noapte · 3000 lei / 2 nopți",price_we_val:"2000 lei / noapte · 3500 lei / 2 nopți",price_note:"Prețul include toată vila (4 dormitoare, living, 3 băi, bucătărie, terasă).",near_title:"În zonă",near1:"Ștrandul termal Tășnad",near2:"Castelul Károlyi, Carei",contact_check_b:"Check-in / Check-out",contact_check_s:"Se stabilește la rezervare",
  foot_about:"Casă de închiriat în Santău — cazare, piscină, jacuzzi și spațiu pentru evenimente.",
  foot_nav:"Navigare",foot_legal:"Legal",foot_impr:"Date firmă",foot_priv:"Politica de confidențialitate",foot_cookie:"Politica de cookie-uri",foot_terms:"Termeni & condiții",
  foot_rights:"Toate drepturile rezervate.",foot_made:"Designed by: <a href='https://www.codebloomdesign.com' target='_blank' rel='noopener'>Codebloom</a>",
  cookie_text:"Folosim doar cookie-uri esențiale pentru funcționarea site-ului. Continuând, ești de acord cu politica de cookie-uri.",
  cookie_reject:"Doar esențiale",cookie_accept:"Accept",
- impr_t:"Date firmă",impr_p:"Datele oficiale de identificare ale afacerii. Câmpurile marcate cu „—” se completează cu datele reale.",impr_h1:"Denumire",impr_h2:"Adresă",impr_h3:"Contact",impr_h4:"CUI / Reg. Com.",impr_cui:"— de completat —",
+ impr_t:"Date firmă",impr_p:"Casa din Deal — vilă de închiriat în Santău, jud. Satu Mare. Ne poți contacta direct pentru rezervări și informații.",impr_h1:"Denumire",impr_h2:"Adresă",impr_h3:"Contact",impr_h4:"CUI / Reg. Com.",impr_cui:"— de completat —",
  priv_t:"Politica de confidențialitate",priv_p1:"Ne pasă de datele tale și le tratăm cu grijă. Mai jos îți explicăm pe scurt ce date atingem când vizitezi site-ul. Operator: Casa din Deal, Santău, jud. Satu Mare (datele complete de firmă sunt la secțiunea „Date firmă”).",
  priv_h1:"Ce date prelucrăm",priv_p2:"Site-ul nu are formulare și nu îți cere date personale. Dacă ne scrii pe WhatsApp, la telefon sau pe rețelele sociale, primim doar ce ne trimiți tu (nume, număr, mesaj), ca să îți putem răspunde și, eventual, să facem o rezervare. Ca la orice site, furnizorul de găzduire poate reține temporar date tehnice (ex. adresa IP) în jurnalele serverului, pentru securitate și funcționare.",
  priv_h2:"Cui le arătăm",priv_p3:"Nu vindem datele tale și nu le dăm nimănui în scop de marketing. Unele servicii pe care le folosim le pot prelucra conform propriilor politici: Google Maps (harta), WhatsApp/Meta și rețelele sociale (când ne scrii sau ne urmărești) și furnizorul de găzduire al site-ului.",
@@ -770,7 +801,7 @@ hu:{
  hero_eyebrow:"Kiadó vendégház · Santău",hero_h1:"Casa din Deal",hero_tag:"A nyaralóházad Santău-n",
  hero_lead:"Az egész házat kiveszitek, csak a tiétek: medence az udvarban, jacuzzi a hűvös estékhez és rengeteg hely az együttléthez. Ti hozzátok a társaságot vagy a családot — mi meg gondoskodunk róla, hogy otthon érezzétek magatokat.",
  hero_wa:"Írj nekünk WhatsAppon",hero_gallery:"Galéria megtekintése",scroll:"Görgess",
- fact_1:"Felejthetetlen élmény",fact_2:"Medence & jacuzzi",fact_3:"Bulik & rendezvények",fact_4:"Udvar & terasz",
+ fact_1:"fő",fact_2:"hálószoba",fact_3:"fürdőszoba",fact_4:"lej / éj",
  about_eyebrow:"Örülünk, hogy itt vagy",about_title:"Egy ház, ahol rögtön otthon érzed magad",
  about_p1:"A Casa din Deal egy nagy, barátságos ház, amit egyben veszel ki — meleg szobákkal, egy konyhával, ahol tényleg jó főzni, egy nappalival, ahol késő estig elbeszélgettek, és egy medencés udvarral, ami a lusta nyári napokra való.",
  about_p2:"Jöttök a családdal, a barátokkal vagy mindkettővel — mi szeretünk vendéglátók lenni, és hagyni, hogy a saját tempótokban gyűjtsétek az emlékeket.",
@@ -787,9 +818,9 @@ hu:{
  stay_p1:"A szobák melegek és csendesek, a konyha teljesen felszerelt — együtt főztök, ráérősen esztek és gondtalanul pihentek. Annyi hely, hogy ne tapossátok egymást.",
  stay_f1:"<b>Kényelmes szobák</b> csoportoknak és családoknak.",stay_f2:"<b>Teljesen felszerelt konyha</b> és egy nappali, ahová mind befértek.",stay_f3:"<b>Wi-Fi, parkoló</b> és minden, amitől nem kell semmivel foglalkoznotok.",
  stay_cta:"Kérdezz rá a szabad időpontokra",
- wellness_eyebrow:"Medence & Pihenés",wellness_title:"Az udvar, ahol a legjobb kint lenni",
- wellness_p:"Nappal egy fejes a medencébe. Este meleg jacuzzi és csillagok felettetek. Közte egy begyújtott grill és kedves emberek körülöttetek — nagyjából így néz ki egy jó nap a Casa din Dealnél.",
- wellness_s1:"Medence az udvarban",wellness_s2:"Jacuzzi",wellness_s3:"Grill & tűz",
+ wellness_eyebrow:"Medence · Dézsa · Szauna",wellness_title:"Nyáron medence, télen dézsa",
+ wellness_p:"Nyáron a fűtött medencében hűsöltök, napozóággyal a napon. Hideg évszakban a dézsában és a szaunában melegedtek fel. A nagy udvar egész évben a tiétek.",
+ wellness_s1:"Fűtött medence (nyáron)",wellness_s2:"Dézsa & szauna (télen)",wellness_s3:"Grill & bogrács",
  events_eyebrow:"Rendezvények & Bulik",events_title:"Ahol a buli tényleg összejön",
  events_p1:"Az egész ház és az udvar a tiétek, teljes nyugalomban. Felteszitek a zenét, begyújtjátok a grillt és élvezitek a vendégeket — a helyről mi gondoskodtunk.",
  events_p2:"Mondjátok el, mit terveztek, és együtt megtaláljuk a legjobb megoldást.",
@@ -806,12 +837,20 @@ hu:{
  contact_eyebrow:"Foglalás & Kapcsolat",contact_title:"Csináljunk nektek helyet",contact_sub:"Egy WhatsApp-üzenet, és gyorsan megírjuk, mikor van szabad. Szeretettel válaszolunk.",
  contact_card_t:"Elérhetőségek",contact_loc_b:"Helyszín",contact_loc_s:"Szántó (Santău), Szatmár megye, Románia",
  contact_phone_b:"Telefon",contact_wa:"Írj nekünk WhatsAppon",contact_social_b:"Közösségi média",contact_social_s:"Kövess minket a hírekért",contact_wa_btn:"Foglalj most WhatsAppon",
+ fac_eyebrow:"Részletek",fac_title:"Mit tartalmaz a villa",fac_sub:"Az egész ház, csak nektek — akár 12–14 főig.",
+ fac1_t:"4 hálószoba · 3 fürdő",fac1_p:"Nappali, teljesen felszerelt konyha és nagy terasz — hely 12–14 főnek.",
+ fac2_t:"Nyáron: fűtött medence",fac2_p:"Fűtött medence napozóággyal, a meleg napokra.",
+ fac3_t:"Télen: dézsa & szauna",fac3_p:"Meleg dézsa és szauna a hideg évszakra.",
+ fac4_t:"Grill & bogrács",fac4_p:"Grill és bogrács az udvarban, plusz gyerek játszótér.",
+ fac5_t:"Smart TV & Wi-Fi",fac5_p:"Ingyen Wi-Fi, Smart TV, kávégép, sütő, főzőlap, mikró, hűtő.",
+ fac6_t:"Privát parkolás",fac6_p:"Ingyen parkolás az udvarban. Bár mi is szeretjük őket, háziállatot nem fogadunk.",
+ price_title:"Árak",price_wd:"Hétfő–Csütörtök",price_we:"Péntek–Vasárnap",price_wd_val:"2000 lej / éj · 3000 lej / 2 éj",price_we_val:"2000 lej / éj · 3500 lej / 2 éj",price_note:"Az ár a teljes villát tartalmazza (4 hálószoba, nappali, 3 fürdő, konyha, terasz).",near_title:"A környéken",near1:"Tasnádi termálstrand",near2:"Nagykárolyi Károlyi-kastély",contact_check_b:"Check-in / Check-out",contact_check_s:"Foglaláskor egyeztetjük",
  foot_about:"Kiadó vendégház Santău-n — szállás, medence, jacuzzi és hely a rendezvényekhez.",
  foot_nav:"Menü",foot_legal:"Jogi",foot_impr:"Cégadatok",foot_priv:"Adatvédelmi tájékoztató",foot_cookie:"Süti tájékoztató",foot_terms:"Felhasználási feltételek",
  foot_rights:"Minden jog fenntartva.",foot_made:"Designed by: <a href='https://www.codebloomdesign.com' target='_blank' rel='noopener'>Codebloom</a>",
  cookie_text:"Csak az oldal működéséhez szükséges sütiket használunk. A folytatással elfogadod a süti tájékoztatót.",
  cookie_reject:"Csak a szükségeseket",cookie_accept:"Elfogadom",
- impr_t:"Cégadatok",impr_p:"A vállalkozás hivatalos azonosító adatai. A „—” jellel jelölt mezőket a valós adatokkal kell kitölteni.",impr_h1:"Név",impr_h2:"Cím",impr_h3:"Kapcsolat",impr_h4:"Adószám / Cégjegyzék",impr_cui:"— kitöltendő —",
+ impr_t:"Cégadatok",impr_p:"Casa din Deal — kiadó villa Santău-n, Szatmár megye. Foglalásért és információért közvetlenül elérsz minket.",impr_h1:"Név",impr_h2:"Cím",impr_h3:"Kapcsolat",impr_h4:"Adószám / Cégjegyzék",impr_cui:"— kitöltendő —",
  priv_t:"Adatvédelmi tájékoztató",priv_p1:"Fontosak nekünk az adataid, és gondosan bánunk velük. Lent röviden elmondjuk, milyen adatokkal találkozunk, amikor az oldalt látogatod. Üzemeltető: Casa din Deal, Santău, Szatmár megye (a teljes cégadatok a „Cégadatok” résznél).",
  priv_h1:"Milyen adatokat kezelünk",priv_p2:"Az oldalon nincs űrlap, és nem kérünk tőled személyes adatot. Ha WhatsAppon, telefonon vagy közösségi médián írsz, csak azt kapjuk meg, amit te küldesz (név, szám, üzenet), hogy válaszolni tudjunk és esetleg foglalást intézzünk. Mint minden oldalnál, a tárhelyszolgáltató átmenetileg technikai adatokat (pl. IP-cím) tárolhat a szervernaplókban, biztonsági és működési okból.",
  priv_h2:"Kinek mutatjuk meg",priv_p3:"Nem adjuk el az adataidat, és marketing céljából senkinek nem adjuk tovább. Néhány szolgáltatás, amit használunk, a saját szabályzata szerint kezelhet adatot: Google Maps (térkép), WhatsApp/Meta és a közösségi média (amikor írsz vagy követsz minket), valamint az oldal tárhelyszolgáltatója.",
@@ -829,7 +868,7 @@ en:{
  hero_eyebrow:"Guesthouse for rent · Santău",hero_h1:"Casa din Deal",hero_tag:"Your holiday home in Santău",
  hero_lead:"You rent the whole house, just for you: a pool in the yard, a jacuzzi for cooler evenings and plenty of room to be together. You bring the crew or the family — we'll make sure you feel right at home.",
  hero_wa:"Message us on WhatsApp",hero_gallery:"View gallery",scroll:"Scroll",
- fact_1:"Unforgettable experience",fact_2:"Pool & jacuzzi",fact_3:"Parties & events",fact_4:"Yard & terrace",
+ fact_1:"guests",fact_2:"bedrooms",fact_3:"bathrooms",fact_4:"lei / night",
  about_eyebrow:"So glad you're here",about_title:"A house where you feel at home right away",
  about_p1:"Casa din Deal is a big, welcoming house you take all to yourselves — with warm rooms, a kitchen you'll actually enjoy cooking in, a living room where you stay up chatting, and a yard with a pool made for lazy summer days.",
  about_p2:"Come with family, with friends or both — we love being hosts and letting you make memories at your own pace.",
@@ -846,9 +885,9 @@ en:{
  stay_p1:"The rooms are warm and quiet, and the kitchen is fully equipped — cook together, eat at your leisure and rest without a care. Enough space so you're never on top of each other.",
  stay_f1:"<b>Comfortable rooms</b> for groups and families.",stay_f2:"<b>Fully equipped kitchen</b> and a living room big enough for everyone.",stay_f3:"<b>Wi-Fi, parking</b> and everything so you don't have to think about a thing.",
  stay_cta:"Ask us about availability",
- wellness_eyebrow:"Pool & Relaxation",wellness_title:"The yard where you'll want to stay",
- wellness_p:"A dip in the pool by day. A warm jacuzzi and stars above by night. In between, a fired-up grill and good people around — that's pretty much a good day at Casa din Deal.",
- wellness_s1:"Pool in the yard",wellness_s2:"Jacuzzi",wellness_s3:"BBQ & fire",
+ wellness_eyebrow:"Pool · Hot tub · Sauna",wellness_title:"Pool in summer, hot tub in winter",
+ wellness_p:"In summer you cool off in the heated pool, with loungers in the sun. In the cold season you warm up in the hot tub and sauna. The large yard is yours all year round.",
+ wellness_s1:"Heated pool (summer)",wellness_s2:"Hot tub & sauna (winter)",wellness_s3:"BBQ & cauldron",
  events_eyebrow:"Events & Parties",events_title:"Where the party actually works",
  events_p1:"The whole house and yard are yours, in complete privacy. Put on the music, light the grill and enjoy your guests — we've taken care of the space.",
  events_p2:"Tell us what you're planning and we'll find the best option together.",
@@ -865,12 +904,20 @@ en:{
  contact_eyebrow:"Booking & Contact",contact_title:"Let's make room for you",contact_sub:"One message on WhatsApp and we'll quickly tell you what dates are free. We'll be happy to hear from you.",
  contact_card_t:"Contact details",contact_loc_b:"Location",contact_loc_s:"Santău, Satu Mare county, Romania",
  contact_phone_b:"Phone",contact_wa:"Message us on WhatsApp",contact_social_b:"Social media",contact_social_s:"Follow us for news",contact_wa_btn:"Book now on WhatsApp",
+ fac_eyebrow:"Details",fac_title:"What the villa includes",fac_sub:"The whole house, just for you — up to 12–14 guests.",
+ fac1_t:"4 bedrooms · 3 baths",fac1_p:"Living room, fully equipped kitchen and a large terrace — room for 12–14 guests.",
+ fac2_t:"Summer: heated pool",fac2_p:"Heated pool with loungers, for warm days.",
+ fac3_t:"Winter: hot tub & sauna",fac3_p:"A warm hot tub and sauna for the cold season.",
+ fac4_t:"BBQ & cauldron",fac4_p:"Grill and cauldron in the yard, plus a children's playground.",
+ fac5_t:"Smart TV & Wi-Fi",fac5_p:"Free Wi-Fi, Smart TV, coffee machine, oven, stove, microwave, fridge.",
+ fac6_t:"Private parking",fac6_p:"Free parking in the yard. Much as we love them too, we don't accept pets.",
+ price_title:"Prices",price_wd:"Mon–Thu",price_we:"Fri–Sun",price_wd_val:"2000 lei / night · 3000 lei / 2 nights",price_we_val:"2000 lei / night · 3500 lei / 2 nights",price_note:"The price includes the whole villa (4 bedrooms, living room, 3 baths, kitchen, terrace).",near_title:"Nearby",near1:"Tășnad thermal spa",near2:"Károlyi Castle, Carei",contact_check_b:"Check-in / Check-out",contact_check_s:"Arranged at booking",
  foot_about:"Guesthouse for rent in Santău — stays, pool, jacuzzi and space for events.",
  foot_nav:"Navigation",foot_legal:"Legal",foot_impr:"Company details",foot_priv:"Privacy policy",foot_cookie:"Cookie policy",foot_terms:"Terms & conditions",
  foot_rights:"All rights reserved.",foot_made:"Designed by: <a href='https://www.codebloomdesign.com' target='_blank' rel='noopener'>Codebloom</a>",
  cookie_text:"We only use essential cookies for the site to work. By continuing, you agree to the cookie policy.",
  cookie_reject:"Essential only",cookie_accept:"Accept",
- impr_t:"Company details",impr_p:"The official identification details of the business. Fields marked with “—” are to be filled in with the real data.",impr_h1:"Name",impr_h2:"Address",impr_h3:"Contact",impr_h4:"Reg. number",impr_cui:"— to be completed —",
+ impr_t:"Company details",impr_p:"Casa din Deal — a villa for rent in Santău, Satu Mare county, Romania. Contact us directly for bookings and details.",impr_h1:"Name",impr_h2:"Address",impr_h3:"Contact",impr_h4:"Reg. number",impr_cui:"— to be completed —",
  priv_t:"Privacy policy",priv_p1:"We care about your data and handle it responsibly. Below is a short explanation of what data we touch when you visit the site. Controller: Casa din Deal, Santău, Satu Mare county (full company details under “Company details”).",
  priv_h1:"What data we process",priv_p2:"The site has no forms and does not ask you for personal data. If you write to us on WhatsApp, by phone or on social media, we only receive what you send us (name, number, message) so we can reply and, if needed, arrange a booking. As with any website, the hosting provider may temporarily keep technical data (e.g. your IP address) in server logs, for security and operation.",
  priv_h2:"Who we share it with",priv_p3:"We do not sell your data and do not pass it to anyone for marketing. Some services we use may process data under their own policies: Google Maps (the map), WhatsApp/Meta and social media (when you message or follow us), and the site's hosting provider.",
