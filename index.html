@@ -955,16 +955,7 @@ function setLang(lang){
   document.querySelectorAll('[href="#WHATSAPP#"]').forEach(a=>a.setAttribute("href",wa));
   try{localStorage.setItem("cdd_lang",lang);}catch(e){}
 }
-// telefon szöveg csere (statikus helyek)
-function fillPhoneText(){
-  document.querySelectorAll("a,p").forEach(el=>{
-    if(el.innerHTML.includes("#PHONE_DISPLAY#")) el.innerHTML=el.innerHTML.replaceAll("#PHONE_DISPLAY#",PHONE_DISPLAY);
-  });
-  document.querySelectorAll('a[href="tel:#PHONE#"]').forEach(a=>a.setAttribute("href","tel:+"+PHONE_INTL));
-}
-
 document.addEventListener("DOMContentLoaded",()=>{
-  fillPhoneText();
   let saved="ro";try{saved=localStorage.getItem("cdd_lang")||"ro";}catch(e){}
   setLang(saved);
   document.querySelectorAll("#lang button").forEach(b=>b.addEventListener("click",()=>setLang(b.dataset.lang)));
