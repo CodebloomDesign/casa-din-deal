@@ -1,0 +1,969 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Casa din Deal · Santău — Casă de închiriat, piscină & evenimente</title>
+<meta name="description" content="Casa din Deal — casă de închiriat în Santău, jud. Satu Mare. Cazare, piscină, jacuzzi și curte mare pentru vacanțe, petreceri și evenimente. Rezervări pe WhatsApp." />
+<meta name="theme-color" content="#0f4c73" />
+<link rel="icon" type="image/png" href="images/logo.png" />
+
+<!-- Open Graph -->
+<meta property="og:title" content="Casa din Deal · Santău" />
+<meta property="og:description" content="Casă de închiriat în Santău — cazare, piscină, jacuzzi și spațiu pentru evenimente." />
+<meta property="og:type" content="website" />
+<meta property="og:image" content="images/hero-pool.jpg" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+
+<style>
+/* ============ TOKENS ============ */
+:root{
+  --navy:#0f4c73;        /* mély kék — fő márkaszín (címek, sötét sávok) */
+  --navy-deep:#0b3a56;   /* legsötétebb kék */
+  --navy-soft:#2b86bd;   /* közepes kék */
+  --wood:#3d9bd4;        /* világoskék (gradiensek, kiemelés) */
+  --wood-dark:#2a7fb8;   /* sötétebb kék (címkék, hoverek) */
+  --cream:#ffffff;       /* fő háttér: fehér */
+  --cream-2:#eaf4fb;     /* halvány világoskék szekció-háttér */
+  --gold:#4aa8dd;        /* akcentus: világoskék (gombok, kiemelés) */
+  --white:#ffffff;
+  --ink:#152e3a;
+  --muted:#566a74;
+  --line:rgba(14,61,89,.12);
+  --shadow-sm:0 4px 18px rgba(13,43,62,.10);
+  --shadow-md:0 18px 50px rgba(13,43,62,.18);
+  --radius:18px;
+  --radius-lg:26px;
+  --maxw:1200px;
+  --font-head:'Playfair Display',Georgia,serif;
+  --font-body:'Inter',system-ui,sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:var(--font-body);
+  color:var(--ink);
+  background:var(--cream);
+  line-height:1.65;
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+h1,h2,h3{font-family:var(--font-head);font-weight:600;line-height:1.12;letter-spacing:-.01em}
+section{position:relative}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px}
+
+/* ============ NAV ============ */
+.nav{
+  position:fixed;top:0;left:0;right:0;z-index:100;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:18px 32px;transition:.35s ease;
+}
+.nav.scrolled{
+  background:rgba(246,239,228,.9);
+  backdrop-filter:blur(14px);
+  box-shadow:0 6px 24px rgba(13,43,62,.10);
+  padding:12px 32px;
+}
+.brand{display:flex;align-items:center;gap:12px;color:var(--white);transition:.35s}
+.nav.scrolled .brand{color:var(--navy)}
+.brand .mark{
+  width:48px;height:48px;border-radius:12px;flex:none;
+  display:grid;place-items:center;overflow:hidden;padding:3px;
+  background:#fff;box-shadow:var(--shadow-sm);
+}
+.brand .mark img{width:100%;height:100%;object-fit:contain;display:block}
+.brand b{font-family:var(--font-head);font-size:20px;font-weight:600;letter-spacing:.01em;display:block;line-height:1}
+.brand small{font-size:11px;letter-spacing:.28em;text-transform:uppercase;opacity:.75}
+.nav-links{display:flex;align-items:center;gap:28px}
+.nav-links a{
+  color:var(--white);font-size:14.5px;font-weight:500;letter-spacing:.01em;
+  position:relative;transition:.25s;
+}
+.nav.scrolled .nav-links a{color:var(--navy)}
+.nav-links a::after{content:"";position:absolute;left:0;bottom:-6px;height:2px;width:0;background:var(--gold);transition:.28s}
+.nav-links a:hover::after{width:100%}
+.nav-cta{
+  background:var(--gold);color:var(--navy-deep)!important;
+  padding:10px 20px;border-radius:100px;font-weight:600;
+  box-shadow:0 8px 22px rgba(74,168,221,.4);
+}
+.nav-cta::after{display:none!important}
+.nav-cta:hover{transform:translateY(-2px)}
+
+/* language switch */
+.lang{display:flex;gap:2px;background:rgba(255,255,255,.16);border-radius:100px;padding:4px}
+.nav.scrolled .lang{background:rgba(18,58,82,.08)}
+.lang button{
+  border:0;background:transparent;color:#fff;cursor:pointer;
+  font:600 12px/1 var(--font-body);letter-spacing:.06em;
+  padding:6px 10px;border-radius:100px;transition:.2s;
+}
+.nav.scrolled .lang button{color:var(--navy)}
+.lang button.active{background:var(--white);color:var(--navy)!important;box-shadow:var(--shadow-sm)}
+
+.burger{display:none;flex-direction:column;gap:5px;background:none;border:0;cursor:pointer;padding:6px}
+.burger span{width:26px;height:2px;background:#fff;border-radius:2px;transition:.3s}
+.nav.scrolled .burger span{background:var(--navy)}
+
+/* ============ HERO ============ */
+.hero{
+  min-height:100vh;display:flex;align-items:center;
+  position:relative;color:#fff;overflow:hidden;
+}
+.hero-bg{position:absolute;inset:0;z-index:-2}
+.hero-bg img{width:100%;height:100%;object-fit:cover}
+.hero::after{
+  content:"";position:absolute;inset:0;z-index:-1;
+  background:linear-gradient(180deg,rgba(13,43,62,.55) 0%,rgba(13,43,62,.35) 40%,rgba(13,43,62,.8) 100%);
+}
+.hero .wrap{padding-top:120px;padding-bottom:80px}
+.hero .eyebrow{
+  display:inline-flex;align-items:center;gap:10px;
+  font-size:13px;letter-spacing:.3em;text-transform:uppercase;
+  color:var(--cream);margin-bottom:22px;
+  border:1px solid rgba(255,255,255,.3);border-radius:100px;padding:8px 18px;
+  backdrop-filter:blur(4px);
+}
+.hero .eyebrow::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--gold)}
+.hero h1{font-size:clamp(3.2rem,8vw,6.2rem);margin-bottom:12px;text-shadow:0 4px 34px rgba(0,0,0,.4);letter-spacing:-.02em}
+.hero h1 em{font-style:italic;color:var(--gold)}
+.hero-tag{font-family:var(--font-head);font-style:italic;font-size:clamp(1.3rem,3vw,2rem);color:var(--gold);margin-bottom:26px;text-shadow:0 2px 18px rgba(0,0,0,.35)}
+.hero p.lead{font-size:clamp(1.05rem,2vw,1.35rem);max-width:560px;font-weight:300;color:#eef3f5;margin-bottom:36px}
+.hero-actions{display:flex;flex-wrap:wrap;gap:16px}
+.btn{
+  display:inline-flex;align-items:center;gap:10px;cursor:pointer;
+  padding:15px 30px;border-radius:100px;font-weight:600;font-size:15px;
+  border:0;transition:.28s;letter-spacing:.01em;
+}
+.btn-primary{background:var(--gold);color:var(--navy-deep);box-shadow:0 12px 30px rgba(74,168,221,.4)}
+.btn-primary:hover{transform:translateY(-3px);box-shadow:0 18px 40px rgba(74,168,221,.5)}
+.btn-ghost{background:rgba(255,255,255,.12);color:#fff;border:1px solid rgba(255,255,255,.4);backdrop-filter:blur(6px)}
+.btn-ghost:hover{background:rgba(255,255,255,.22)}
+.btn-wa{background:#25d366;color:#fff;box-shadow:0 12px 30px rgba(37,211,102,.4)}
+.btn-wa:hover{transform:translateY(-3px)}
+.hero-scroll{
+  position:absolute;bottom:28px;left:50%;transform:translateX(-50%);
+  color:rgba(255,255,255,.7);font-size:12px;letter-spacing:.25em;text-transform:uppercase;
+  display:flex;flex-direction:column;align-items:center;gap:8px;
+}
+.hero-scroll span{width:1px;height:38px;background:rgba(255,255,255,.5);animation:scrolldot 2s infinite}
+@keyframes scrolldot{0%{transform:scaleY(0);transform-origin:top}50%{transform:scaleY(1);transform-origin:top}51%{transform-origin:bottom}100%{transform:scaleY(0);transform-origin:bottom}}
+
+/* quick facts bar */
+.facts{
+  background:var(--navy);color:#fff;
+  display:grid;grid-template-columns:repeat(4,1fr);
+}
+.facts .f{padding:30px 24px;text-align:center;border-right:1px solid rgba(255,255,255,.08)}
+.facts .f:last-child{border-right:0}
+.facts .f b{font-family:var(--font-head);font-size:2rem;display:block;color:var(--gold)}
+.facts .f span{font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:#cdd9df}
+
+/* ============ SECTION HEADINGS ============ */
+.section{padding:110px 0}
+.section.tight{padding:80px 0}
+.eyebrow-2{
+  display:inline-block;font-size:12.5px;letter-spacing:.28em;text-transform:uppercase;
+  color:var(--wood-dark);font-weight:600;margin-bottom:14px;
+}
+.section h2{font-size:clamp(2rem,4vw,3rem);color:var(--navy);margin-bottom:18px}
+.section .sub{color:var(--muted);max-width:620px;font-size:1.05rem}
+.center{text-align:center;margin-left:auto;margin-right:auto}
+.center .sub{margin-left:auto;margin-right:auto}
+
+/* ============ ABOUT / SPLIT ============ */
+.split{display:grid;grid-template-columns:1.05fr 1fr;gap:64px;align-items:center}
+.split.rev{grid-template-columns:1fr 1.05fr}
+.split-media{position:relative}
+.split-media img{border-radius:var(--radius-lg);box-shadow:var(--shadow-md);width:100%;height:520px;object-fit:cover}
+.split-media .badge{
+  position:absolute;bottom:-26px;left:-26px;
+  background:var(--white);border-radius:var(--radius);padding:22px 26px;
+  box-shadow:var(--shadow-md);max-width:220px;
+}
+.split-media .badge b{font-family:var(--font-head);font-size:1.5rem;color:var(--wood-dark);display:block}
+.split-media .badge span{font-size:13px;color:var(--muted)}
+.split-body h2{margin-bottom:20px}
+.split-body p{color:var(--muted);margin-bottom:16px}
+.feature-list{list-style:none;margin-top:26px;display:grid;gap:14px}
+.feature-list li{display:flex;gap:14px;align-items:flex-start;font-size:15px}
+.feature-list .ic{
+  flex:none;width:38px;height:38px;border-radius:12px;display:grid;place-items:center;
+  background:var(--cream-2);font-size:19px;
+}
+
+/* ============ OFFER CARDS ============ */
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;margin-top:56px}
+.card{
+  background:var(--white);border-radius:var(--radius-lg);overflow:hidden;
+  box-shadow:var(--shadow-sm);transition:.35s;position:relative;
+}
+.card:hover{transform:translateY(-8px);box-shadow:var(--shadow-md)}
+.card-img{height:240px;overflow:hidden}
+.card-img img{width:100%;height:100%;object-fit:cover;transition:.7s}
+.card:hover .card-img img{transform:scale(1.08)}
+.card-tag{
+  position:absolute;top:18px;left:18px;background:rgba(255,255,255,.92);
+  color:var(--navy);font-size:12px;font-weight:600;letter-spacing:.06em;
+  padding:6px 14px;border-radius:100px;text-transform:uppercase;
+}
+.card-body{padding:28px 26px 30px}
+.card-body h3{font-size:1.5rem;color:var(--navy);margin-bottom:10px}
+.card-body p{color:var(--muted);font-size:14.5px;margin-bottom:18px}
+.card-body .more{color:var(--wood-dark);font-weight:600;font-size:14px;display:inline-flex;gap:7px;align-items:center;transition:.25s}
+.card:hover .card-body .more{gap:12px}
+
+/* ============ WELLNESS BAND ============ */
+.band{
+  color:#fff;position:relative;padding:130px 0;overflow:hidden;
+}
+.band-bg{position:absolute;inset:0;z-index:-2}
+.band-bg img{width:100%;height:100%;object-fit:cover}
+.band::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(120deg,rgba(13,43,62,.86),rgba(18,58,82,.6))}
+.band h2{color:#fff;font-size:clamp(2rem,4vw,3rem);margin-bottom:18px}
+.band p{color:#dce7ec;max-width:560px;font-size:1.08rem;margin-bottom:30px}
+.band-stats{display:flex;gap:44px;flex-wrap:wrap;margin-top:40px}
+.band-stats .s b{font-family:var(--font-head);font-size:2.4rem;color:var(--gold);display:block}
+.band-stats .s span{font-size:13px;letter-spacing:.06em;color:#cdd9df}
+
+/* ============ GALLERY ============ */
+.gallery{
+  display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:220px;gap:14px;margin-top:52px;
+}
+.gallery a{overflow:hidden;border-radius:14px;position:relative;cursor:pointer}
+.gallery a img{width:100%;height:100%;object-fit:cover;transition:.7s}
+.gallery a:hover img{transform:scale(1.09)}
+.gallery a::after{content:"⤢";position:absolute;inset:0;display:grid;place-items:center;color:#fff;font-size:26px;background:rgba(13,43,62,.35);opacity:0;transition:.3s}
+.gallery a:hover::after{opacity:1}
+.g-tall{grid-row:span 2}
+.g-wide{grid-column:span 2}
+
+/* lightbox */
+.lightbox{position:fixed;inset:0;z-index:200;background:rgba(8,20,28,.94);display:none;align-items:center;justify-content:center;padding:30px}
+.lightbox.open{display:flex}
+.lightbox img{max-width:90vw;max-height:86vh;border-radius:12px;box-shadow:0 30px 80px rgba(0,0,0,.6)}
+.lightbox .close{position:absolute;top:24px;right:30px;color:#fff;font-size:38px;cursor:pointer;line-height:1}
+.lightbox .nav-arrow{position:absolute;top:50%;transform:translateY(-50%);color:#fff;font-size:44px;cursor:pointer;user-select:none;padding:20px;opacity:.7;transition:.2s}
+.lightbox .nav-arrow:hover{opacity:1}
+.lightbox .prev{left:10px}.lightbox .next{right:10px}
+
+/* ============ EXPERIENCE / VIBE ============ */
+.vibe{background:var(--navy-deep);color:#fff;padding:110px 0}
+.vibe h2{color:#fff}
+.vibe .eyebrow-2{color:var(--gold)}
+.vibe .sub{color:#bcccd4}
+.vibe-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:52px}
+.vibe-item{padding:34px 28px;border-radius:var(--radius-lg);background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);transition:.3s}
+.vibe-item:hover{background:rgba(255,255,255,.08);transform:translateY(-6px)}
+.vibe-item .em{font-size:34px;margin-bottom:16px;display:block}
+.vibe-item h3{color:#fff;font-size:1.35rem;margin-bottom:10px}
+.vibe-item p{color:#aebec7;font-size:14.5px}
+
+/* ============ CONTACT ============ */
+.contact{padding:110px 0;background:var(--cream)}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:stretch;margin-top:52px}
+.contact-card{background:#fff;border-radius:var(--radius-lg);padding:44px 40px;box-shadow:var(--shadow-sm)}
+.contact-card h3{color:var(--navy);font-size:1.7rem;margin-bottom:26px}
+.c-row{display:flex;gap:16px;align-items:flex-start;margin-bottom:22px}
+.c-row .ic{flex:none;width:46px;height:46px;border-radius:14px;background:var(--cream-2);display:grid;place-items:center;font-size:20px}
+.c-row b{display:block;color:var(--navy);font-size:15px}
+.c-row a,.c-row span{color:var(--muted);font-size:14.5px}
+.c-row a:hover{color:var(--wood-dark)}
+.socials{display:flex;gap:12px;margin-top:30px}
+.socials a{
+  width:48px;height:48px;border-radius:14px;display:grid;place-items:center;
+  background:var(--navy);color:#fff;transition:.3s;
+}
+.socials a:hover{background:var(--wood-dark);transform:translateY(-3px)}
+.socials svg{width:22px;height:22px;fill:currentColor}
+.map-embed{border-radius:var(--radius-lg);overflow:hidden;box-shadow:var(--shadow-sm);min-height:440px}
+.map-embed iframe{width:100%;height:100%;min-height:440px;border:0;filter:saturate(1.05)}
+.wa-cta{margin-top:26px}
+
+/* ============ FOOTER ============ */
+footer{background:var(--navy-deep);color:#cdd9df;padding:72px 0 30px}
+.foot-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr;gap:48px;margin-bottom:48px}
+.foot-brand .brand{color:#fff;margin-bottom:18px}
+.foot-brand p{color:#9fb2bc;font-size:14.5px;max-width:340px}
+.foot-col h4{color:#fff;font-family:var(--font-body);font-size:14px;letter-spacing:.1em;text-transform:uppercase;margin-bottom:18px}
+.foot-col a,.foot-col button{
+  display:block;color:#9fb2bc;font-size:14.5px;margin-bottom:11px;background:none;border:0;
+  cursor:pointer;text-align:left;font-family:inherit;transition:.2s;
+}
+.foot-col a:hover,.foot-col button:hover{color:var(--gold)}
+.foot-bottom{
+  border-top:1px solid rgba(255,255,255,.1);padding-top:26px;
+  display:flex;justify-content:space-between;flex-wrap:wrap;gap:14px;
+  font-size:13px;color:#7d919c;
+}
+.foot-bottom a{color:#9fb2bc}
+.foot-bottom a:hover{color:var(--gold)}
+
+/* ============ FLOATING WA ============ */
+.wa-float{
+  position:fixed;bottom:24px;right:24px;z-index:120;
+  width:60px;height:60px;border-radius:50%;background:#25d366;
+  display:grid;place-items:center;box-shadow:0 12px 30px rgba(37,211,102,.5);
+  transition:.3s;animation:wapulse 2.4s infinite;
+}
+.wa-float:hover{transform:scale(1.08)}
+.wa-float svg{width:32px;height:32px;fill:#fff}
+@keyframes wapulse{0%{box-shadow:0 0 0 0 rgba(37,211,102,.5)}70%{box-shadow:0 0 0 18px rgba(37,211,102,0)}100%{box-shadow:0 0 0 0 rgba(37,211,102,0)}}
+
+/* ============ COOKIE BANNER ============ */
+.cookie{
+  position:fixed;bottom:0;left:0;right:0;z-index:150;
+  background:var(--white);box-shadow:0 -10px 40px rgba(13,43,62,.16);
+  padding:22px 24px;display:none;
+}
+.cookie.show{display:block}
+.cookie-inner{max-width:var(--maxw);margin:0 auto;display:flex;align-items:center;gap:26px;flex-wrap:wrap}
+.cookie p{font-size:14px;color:var(--muted);flex:1;min-width:260px}
+.cookie p a{color:var(--wood-dark);text-decoration:underline}
+.cookie-btns{display:flex;gap:12px;flex-wrap:wrap}
+.cookie .btn{padding:12px 24px;font-size:14px}
+.btn-mini-ghost{background:transparent;border:1.5px solid var(--line);color:var(--navy)}
+.btn-mini-ghost:hover{background:var(--cream)}
+
+/* ============ MODAL (legal) ============ */
+.modal{position:fixed;inset:0;z-index:180;background:rgba(8,20,28,.7);display:none;align-items:center;justify-content:center;padding:24px}
+.modal.open{display:flex}
+.modal-box{background:#fff;border-radius:var(--radius-lg);max-width:760px;width:100%;max-height:86vh;overflow-y:auto;padding:46px 48px;box-shadow:var(--shadow-md)}
+.modal-box h3{color:var(--navy);font-size:1.9rem;margin-bottom:8px}
+.modal-box .mclose{float:right;font-size:26px;cursor:pointer;color:var(--muted);line-height:1}
+.modal-box h4{color:var(--navy);margin:22px 0 8px;font-family:var(--font-body);font-size:16px;font-weight:600}
+.modal-box p,.modal-box li{color:var(--muted);font-size:14.5px;margin-bottom:10px}
+.modal-box ul{padding-left:20px}
+
+/* ============ REVEAL ============ */
+.reveal{opacity:0;transform:translateY(30px);transition:.8s cubic-bezier(.2,.7,.2,1)}
+.reveal.in{opacity:1;transform:none}
+
+/* ============ RESPONSIVE ============ */
+@media(max-width:960px){
+  .split,.contact-grid{grid-template-columns:1fr;gap:40px}
+  .split.rev .split-media{order:-1}
+  .cards,.vibe-grid{grid-template-columns:1fr 1fr}
+  .facts{grid-template-columns:1fr 1fr}
+  .facts .f:nth-child(2){border-right:0}
+  .gallery{grid-template-columns:1fr 1fr;grid-auto-rows:180px}
+  .g-wide{grid-column:span 2}
+}
+@media(max-width:680px){
+  .nav{padding:14px 18px}
+  .nav.scrolled{padding:10px 18px}
+  .nav-links{
+    position:fixed;top:0;right:-100%;height:100vh;width:78%;max-width:320px;
+    flex-direction:column;align-items:flex-start;justify-content:center;gap:26px;
+    background:var(--navy);padding:40px;transition:.4s;box-shadow:-20px 0 60px rgba(0,0,0,.3);
+  }
+  .nav-links.open{right:0}
+  .nav-links a,.nav.scrolled .nav-links a{color:#fff;font-size:18px}
+  .burger{display:flex;z-index:110}
+  .lang{order:-1}
+  .cards,.vibe-grid,.foot-grid{grid-template-columns:1fr}
+  .gallery{grid-template-columns:1fr 1fr;grid-auto-rows:150px}
+  .section{padding:72px 0}
+  .split-media img{height:380px}
+  .split-media .badge{left:0;bottom:-18px}
+  .modal-box{padding:32px 24px}
+  .band-stats{gap:28px}
+}
+</style>
+</head>
+<body>
+
+<!-- ============ NAV ============ -->
+<nav class="nav" id="nav">
+  <a href="#top" class="brand">
+    <span class="mark"><img src="images/logo.png" alt="Casa din Deal logó"></span>
+    <span><b>Casa din Deal</b><small>Santău</small></span>
+  </a>
+  <div class="nav-links" id="navLinks">
+    <a href="#about" data-i18n="nav_about">Despre</a>
+    <a href="#cazare" data-i18n="nav_stay">Cazare</a>
+    <a href="#wellness" data-i18n="nav_wellness">Wellness</a>
+    <a href="#evenimente" data-i18n="nav_events">Evenimente</a>
+    <a href="#galerie" data-i18n="nav_gallery">Galerie</a>
+    <a href="#contact" data-i18n="nav_contact">Contact</a>
+    <div class="lang" id="lang">
+      <button data-lang="ro" class="active">RO</button>
+      <button data-lang="hu">HU</button>
+      <button data-lang="en">EN</button>
+    </div>
+    <a href="#contact" class="nav-cta" data-i18n="nav_book">Rezervare</a>
+  </div>
+  <button class="burger" id="burger" aria-label="Menu"><span></span><span></span><span></span></button>
+</nav>
+
+<!-- ============ HERO ============ -->
+<header class="hero" id="top">
+  <div class="hero-bg">
+    <img src="images/hero-pool.jpg" alt="Casa din Deal" />
+  </div>
+  <div class="wrap">
+    <span class="eyebrow" data-i18n="hero_eyebrow">Casă de vacanță pe deal · Santău</span>
+    <h1 data-i18n="hero_h1">Casa din Deal</h1>
+    <p class="hero-tag" data-i18n="hero_tag">Natură, liniște și bună dispoziție</p>
+    <p class="lead" data-i18n="hero_lead">Cazare de vis, evenimente private, piscină și jacuzzi — totul pe dealul din Santău, departe de zgomotul orașului.</p>
+    <div class="hero-actions">
+      <a href="#WHATSAPP#" class="btn btn-wa" id="heroWa" target="_blank" rel="noopener">
+        <svg viewBox="0 0 32 32" width="20" height="20" fill="currentColor"><path d="M16 3C9 3 3.5 8.5 3.5 15.5c0 2.3.6 4.4 1.7 6.3L3 29l7.4-2.1c1.8 1 3.9 1.5 6 1.5 7 0 12.5-5.5 12.5-12.5S23 3 16 3zm0 22.7c-1.9 0-3.7-.5-5.3-1.5l-.4-.2-4.4 1.2 1.2-4.3-.2-.4c-1-1.6-1.6-3.5-1.6-5.5C5.5 9.9 10.2 5.2 16 5.2s10.5 4.7 10.5 10.3S21.8 25.7 16 25.7zm5.8-7.7c-.3-.2-1.9-.9-2.2-1-.3-.1-.5-.2-.7.2s-.8 1-1 1.2c-.2.2-.4.2-.7.1-1.9-.9-3.1-1.7-4.4-3.8-.3-.6.3-.5.9-1.7.1-.2 0-.4 0-.6s-.7-1.7-1-2.3c-.3-.6-.5-.5-.7-.5h-.6c-.2 0-.6.1-.9.4-.3.3-1.2 1.1-1.2 2.8s1.2 3.2 1.4 3.5c.2.2 2.4 3.7 5.9 5.1 2.2.9 3 1 4.1.9.7-.1 1.9-.8 2.2-1.5.3-.7.3-1.4.2-1.5-.1-.2-.3-.3-.6-.4z"/></svg>
+        <span data-i18n="hero_wa">Rezervă pe WhatsApp</span>
+      </a>
+      <a href="#galerie" class="btn btn-ghost" data-i18n="hero_gallery">Vezi galeria</a>
+    </div>
+  </div>
+  <div class="hero-scroll"><span></span><small data-i18n="scroll">Scroll</small></div>
+</header>
+
+<!-- ============ QUICK FACTS ============ -->
+<div class="facts">
+  <div class="f"><b>★★★★★</b><span data-i18n="fact_1">Experiență de neuitat</span></div>
+  <div class="f"><b>♨</b><span data-i18n="fact_2">Piscină & jacuzzi</span></div>
+  <div class="f"><b>♫</b><span data-i18n="fact_3">Petreceri & evenimente</span></div>
+  <div class="f"><b>🌳</b><span data-i18n="fact_4">Curte & terasă</span></div>
+</div>
+
+<!-- ============ ABOUT ============ -->
+<section class="section" id="about">
+  <div class="wrap split reveal">
+    <div class="split-media">
+      <img src="images/house-courtyard.jpg" alt="Casa din Deal" />
+      <div class="badge"><b data-i18n="about_badge_b">2022</b><span data-i18n="about_badge_s">Casa ta pe deal, de atunci</span></div>
+    </div>
+    <div class="split-body">
+      <span class="eyebrow-2" data-i18n="about_eyebrow">Bine ai venit</span>
+      <h2 data-i18n="about_title">O casă pe deal, făcută pentru clipe frumoase</h2>
+      <p data-i18n="about_p1">Casa din Deal este locul unde natura, confortul și buna dispoziție se întâlnesc. Așezată pe un deal liniștit din Santău, îți oferă priveliști largi, aer curat și intimitatea de care ai nevoie.</p>
+      <p data-i18n="about_p2">Fie că vrei o vacanță în doi, o petrecere cu prietenii sau un eveniment special, aici totul e pregătit pentru a te simți ca acasă — doar mai frumos.</p>
+      <ul class="feature-list">
+        <li><span class="ic">🏠</span><span data-i18n="about_f1"><b>Casa întreagă</b> — o închiriezi integral, doar pentru grupul tău.</span></li>
+        <li><span class="ic">♨</span><span data-i18n="about_f2"><b>Piscină & jacuzzi</b> — în curte, pentru zile de vară și seri relaxante.</span></li>
+        <li><span class="ic">♫</span><span data-i18n="about_f3"><b>Spațiu de petreceri</b> — perfect pentru evenimente private.</span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ============ OFFER CARDS ============ -->
+<section class="section tight" style="background:var(--cream-2)">
+  <div class="wrap">
+    <div class="center reveal">
+      <span class="eyebrow-2" data-i18n="offer_eyebrow">Ce îți oferim</span>
+      <h2 data-i18n="offer_title">Trei motive să ne alegi</h2>
+      <p class="sub" data-i18n="offer_sub">Cazare, wellness și evenimente — totul într-un singur loc, pe deal.</p>
+    </div>
+    <div class="cards">
+      <div class="card reveal">
+        <div class="card-img"><span class="card-tag" data-i18n="tag_stay">Cazare</span><img src="images/room1.jpg" alt=""></div>
+        <div class="card-body">
+          <h3 data-i18n="card1_t">Cazare confortabilă</h3>
+          <p data-i18n="card1_p">Spații primitoare, complet utilate, cu tot confortul pentru un sejur relaxant în mijlocul naturii.</p>
+          <a href="#cazare" class="more" data-i18n="more">Detalii →</a>
+        </div>
+      </div>
+      <div class="card reveal">
+        <div class="card-img"><span class="card-tag" data-i18n="tag_wellness">Wellness</span><img src="images/jacuzzi-neon.jpg" alt=""></div>
+        <div class="card-body">
+          <h3 data-i18n="card2_t">Piscină, jacuzzi & relaxare</h3>
+          <p data-i18n="card2_p">Răsfață-te la piscină și jacuzzi sub cerul liber, cu priveliște spre deal — momentul perfect de deconectare.</p>
+          <a href="#wellness" class="more" data-i18n="more">Detalii →</a>
+        </div>
+      </div>
+      <div class="card reveal">
+        <div class="card-img"><span class="card-tag" data-i18n="tag_events">Evenimente</span><img src="images/cheers.jpg" alt=""></div>
+        <div class="card-body">
+          <h3 data-i18n="card3_t">Petreceri & evenimente</h3>
+          <p data-i18n="card3_p">Aniversări, petreceri cu prietenii sau evenimente private — spațiu ideal pentru amintiri de neuitat.</p>
+          <a href="#evenimente" class="more" data-i18n="more">Detalii →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CAZARE (split rev) ============ -->
+<section class="section" id="cazare">
+  <div class="wrap split rev reveal">
+    <div class="split-body">
+      <span class="eyebrow-2" data-i18n="stay_eyebrow">Cazare</span>
+      <h2 data-i18n="stay_title">Dormi liniștit, trezește-te cu priveliște</h2>
+      <p data-i18n="stay_p1">Camerele calde și primitoare îți oferă odihna de care ai nevoie după o zi petrecută în natură. Materiale naturale, lemn cald și tot confortul modern.</p>
+      <ul class="feature-list">
+        <li><span class="ic">🛏</span><span data-i18n="stay_f1"><b>Camere confortabile</b> pentru grupuri și familii.</span></li>
+        <li><span class="ic">🍳</span><span data-i18n="stay_f2"><b>Bucătărie complet utilată</b> și spațiu de living generos.</span></li>
+        <li><span class="ic">📶</span><span data-i18n="stay_f3"><b>Wi-Fi, parcare</b> și tot ce ai nevoie pentru un sejur fără griji.</span></li>
+      </ul>
+      <a href="#WHATSAPP#" class="btn btn-primary wa-cta" target="_blank" rel="noopener" data-i18n="stay_cta">Verifică disponibilitatea</a>
+    </div>
+    <div class="split-media">
+      <img src="images/room3.jpg" alt="Cazare">
+    </div>
+  </div>
+</section>
+
+<!-- ============ WELLNESS BAND ============ -->
+<section class="band" id="wellness">
+  <div class="band-bg"><img src="images/pool-night.jpg" alt="Jacuzzi"></div>
+  <div class="wrap reveal">
+    <span class="eyebrow-2" style="color:var(--gold)" data-i18n="wellness_eyebrow">Wellness & Relaxare</span>
+    <h2 data-i18n="wellness_title">Piscină & jacuzzi sub cerul liber</h2>
+    <p data-i18n="wellness_p">Imaginează-ți: piscina care sclipește în soare ziua și se aprinde în lumini seara, jacuzzi-ul cald sub cerul înstelat și liniștea dealului în jur. Wellness-ul de la Casa din Deal transformă orice zi într-o amintire.</p>
+    <div class="band-stats">
+      <div class="s"><b>💧</b><span data-i18n="wellness_s1">Piscină în curte</span></div>
+      <div class="s"><b>♨</b><span data-i18n="wellness_s2">Jacuzzi</span></div>
+      <div class="s"><b>🔥</b><span data-i18n="wellness_s3">Grătar & foc</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ EVENIMENTE ============ -->
+<section class="section" id="evenimente">
+  <div class="wrap split reveal">
+    <div class="split-media">
+      <img src="images/sunset-toast.jpg" alt="Evenimente">
+      <div class="badge"><b data-i18n="events_badge_b">100%</b><span data-i18n="events_badge_s">Intimitate pentru evenimentul tău</span></div>
+    </div>
+    <div class="split-body">
+      <span class="eyebrow-2" data-i18n="events_eyebrow">Evenimente & Petreceri</span>
+      <h2 data-i18n="events_title">Locul perfect pentru petrecerea ta</h2>
+      <p data-i18n="events_p1">Aniversări, petreceri tematice, ieșiri cu prietenii sau evenimente de familie — Casa din Deal îți oferă spațiul, intimitatea și atmosfera potrivită.</p>
+      <p data-i18n="events_p2">Spune-ne ce ai în minte, iar noi te ajutăm să transformi ziua într-una specială.</p>
+      <ul class="feature-list">
+        <li><span class="ic">🎉</span><span data-i18n="events_f1"><b>Spațiu privat</b> — doar tu și invitații tăi.</span></li>
+        <li><span class="ic">🔥</span><span data-i18n="events_f2"><b>Grătar & foc de tabără</b> pentru serile lungi.</span></li>
+        <li><span class="ic">🎶</span><span data-i18n="events_f3"><b>Atmosferă de petrecere</b> în mijlocul naturii.</span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ============ GALLERY ============ -->
+<section class="section tight" id="galerie" style="background:var(--cream-2)">
+  <div class="wrap">
+    <div class="center reveal">
+      <span class="eyebrow-2" data-i18n="gallery_eyebrow">Galerie</span>
+      <h2 data-i18n="gallery_title">Momente de la Casa din Deal</h2>
+      <p class="sub" data-i18n="gallery_sub">O privire asupra atmosferei, naturii și clipelor petrecute aici.</p>
+    </div>
+    <div class="gallery reveal" id="gallery">
+      <a class="g-tall" data-full="images/pool-day.jpg"><img src="images/pool-day.jpg" alt=""></a>
+      <a data-full="images/terrace-food.jpg"><img src="images/terrace-food.jpg" alt=""></a>
+      <a class="g-wide" data-full="images/house-pool-day.jpg"><img src="images/house-pool-day.jpg" alt=""></a>
+      <a data-full="images/jacuzzi-night.jpg"><img src="images/jacuzzi-night.jpg" alt=""></a>
+      <a data-full="images/terrace-garden.jpg"><img src="images/terrace-garden.jpg" alt=""></a>
+      <a class="g-wide" data-full="images/night-lights.jpg"><img src="images/night-lights.jpg" alt=""></a>
+      <a class="g-tall" data-full="images/fire-asti.jpg"><img src="images/fire-asti.jpg" alt=""></a>
+      <a data-full="images/dining.jpg"><img src="images/dining.jpg" alt=""></a>
+      <a data-full="images/kitchen.jpg"><img src="images/kitchen.jpg" alt=""></a>
+    </div>
+  </div>
+</section>
+
+<!-- lightbox -->
+<div class="lightbox" id="lightbox">
+  <span class="close" id="lbClose">×</span>
+  <span class="nav-arrow prev" id="lbPrev">‹</span>
+  <img id="lbImg" src="" alt="">
+  <span class="nav-arrow next" id="lbNext">›</span>
+</div>
+
+<!-- ============ VIBE ============ -->
+<section class="vibe">
+  <div class="wrap">
+    <div class="center reveal">
+      <span class="eyebrow-2" data-i18n="vibe_eyebrow">Atmosfera</span>
+      <h2 data-i18n="vibe_title">De ce e specială Casa din Deal</h2>
+      <p class="sub" data-i18n="vibe_sub">Un loc care îmbină natura cu buna dispoziție — exact ce ai nevoie.</p>
+    </div>
+    <div class="vibe-grid">
+      <div class="vibe-item reveal"><span class="em">🏠</span><h3 data-i18n="vibe1_t">Casa întreagă</h3><p data-i18n="vibe1_p">O închiriezi integral — fără vecini, doar grupul tău.</p></div>
+      <div class="vibe-item reveal"><span class="em">♨</span><h3 data-i18n="vibe2_t">Piscină & jacuzzi</h3><p data-i18n="vibe2_p">Relaxare în curte, vara și în serile răcoroase.</p></div>
+      <div class="vibe-item reveal"><span class="em">🍳</span><h3 data-i18n="vibe3_t">Bucătărie utilată</h3><p data-i18n="vibe3_p">Gătești ca acasă, cu tot ce ai nevoie.</p></div>
+      <div class="vibe-item reveal"><span class="em">🌳</span><h3 data-i18n="vibe4_t">Curte mare</h3><p data-i18n="vibe4_p">Spațiu pentru grătar, joacă și petreceri.</p></div>
+      <div class="vibe-item reveal"><span class="em">🥂</span><h3 data-i18n="vibe5_t">Bună pentru petreceri</h3><p data-i18n="vibe5_p">Intimitate și loc suficient pentru evenimentele tale.</p></div>
+      <div class="vibe-item reveal"><span class="em">🏡</span><h3 data-i18n="vibe6_t">Confort ca acasă</h3><p data-i18n="vibe6_p">Tot ce ai nevoie ca să te simți bine.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CONTACT ============ -->
+<section class="contact" id="contact">
+  <div class="wrap">
+    <div class="center reveal">
+      <span class="eyebrow-2" data-i18n="contact_eyebrow">Rezervări & Contact</span>
+      <h2 data-i18n="contact_title">Hai să ne vedem pe deal</h2>
+      <p class="sub" data-i18n="contact_sub">Scrie-ne pe WhatsApp pentru rezervări și disponibilitate — răspundem rapid.</p>
+    </div>
+    <div class="contact-grid">
+      <div class="contact-card reveal">
+        <h3 data-i18n="contact_card_t">Date de contact</h3>
+        <div class="c-row"><span class="ic">📍</span><div><b data-i18n="contact_loc_b">Locație</b><span data-i18n="contact_loc_s">Santău, jud. Satu Mare, România</span></div></div>
+        <div class="c-row"><span class="ic">📞</span><div><b data-i18n="contact_phone_b">Telefon</b><a href="tel:#PHONE#">#PHONE_DISPLAY#</a></div></div>
+        <div class="c-row"><span class="ic">💬</span><div><b>WhatsApp</b><a href="#WHATSAPP#" target="_blank" rel="noopener" data-i18n="contact_wa">Scrie-ne pe WhatsApp</a></div></div>
+        <div class="c-row"><span class="ic">📷</span><div><b data-i18n="contact_social_b">Social media</b><span data-i18n="contact_social_s">Urmărește-ne pentru noutăți</span></div></div>
+        <div class="socials">
+          <a href="https://www.facebook.com/profile.php?id=100063756342252" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24"><path d="M22 12a10 10 0 10-11.6 9.9v-7H7.9V12h2.5V9.8c0-2.5 1.5-3.9 3.8-3.9 1.1 0 2.2.2 2.2.2v2.5h-1.3c-1.2 0-1.6.8-1.6 1.6V12h2.8l-.4 2.9h-2.3v7A10 10 0 0022 12z"/></svg></a>
+          <a href="https://www.instagram.com/casa_din_deal_2022/" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24"><path d="M12 2.2c3.2 0 3.6 0 4.9.1 1.2.1 1.8.3 2.2.4.6.2 1 .5 1.4.9.4.4.7.8.9 1.4.2.4.4 1 .4 2.2.1 1.3.1 1.7.1 4.9s0 3.6-.1 4.9c-.1 1.2-.3 1.8-.4 2.2-.2.6-.5 1-.9 1.4-.4.4-.8.7-1.4.9-.4.2-1 .4-2.2.4-1.3.1-1.7.1-4.9.1s-3.6 0-4.9-.1c-1.2-.1-1.8-.3-2.2-.4-.6-.2-1-.5-1.4-.9-.4-.4-.7-.8-.9-1.4-.2-.4-.4-1-.4-2.2C2.2 15.6 2.2 15.2 2.2 12s0-3.6.1-4.9c.1-1.2.3-1.8.4-2.2.2-.6.5-1 .9-1.4.4-.4.8-.7 1.4-.9.4-.2 1-.4 2.2-.4C8.4 2.2 8.8 2.2 12 2.2zm0 1.8c-3.1 0-3.5 0-4.7.1-1.1.1-1.7.2-2.1.4-.5.2-.9.4-1.3.8-.4.4-.6.8-.8 1.3-.2.4-.3 1-.4 2.1C2.6 9.9 2.6 10.3 2.6 12s0 2.1.1 3.3c.1 1.1.2 1.7.4 2.1.2.5.4.9.8 1.3.4.4.8.6 1.3.8.4.2 1 .3 2.1.4 1.2.1 1.6.1 4.7.1s3.5 0 4.7-.1c1.1-.1 1.7-.2 2.1-.4.5-.2.9-.4 1.3-.8.4-.4.6-.8.8-1.3.2-.4.3-1 .4-2.1.1-1.2.1-1.6.1-3.3s0-2.1-.1-3.3c-.1-1.1-.2-1.7-.4-2.1-.2-.5-.4-.9-.8-1.3-.4-.4-.8-.6-1.3-.8-.4-.2-1-.3-2.1-.4-1.2-.1-1.6-.1-4.7-.1zm0 3.1a4.9 4.9 0 110 9.8 4.9 4.9 0 010-9.8zm0 8.1a3.2 3.2 0 100-6.4 3.2 3.2 0 000 6.4zm6.3-8.3a1.15 1.15 0 11-2.3 0 1.15 1.15 0 012.3 0z"/></svg></a>
+          <a href="#WHATSAPP#" target="_blank" rel="noopener" aria-label="WhatsApp"><svg viewBox="0 0 32 32"><path d="M16 3C9 3 3.5 8.5 3.5 15.5c0 2.3.6 4.4 1.7 6.3L3 29l7.4-2.1c1.8 1 3.9 1.5 6 1.5 7 0 12.5-5.5 12.5-12.5S23 3 16 3zm5.8 15c-.3-.2-1.9-.9-2.2-1-.3-.1-.5-.2-.7.2s-.8 1-1 1.2c-.2.2-.4.2-.7.1-1.9-.9-3.1-1.7-4.4-3.8-.3-.6.3-.5.9-1.7.1-.2 0-.4 0-.6s-.7-1.7-1-2.3c-.3-.6-.5-.5-.7-.5h-.6c-.2 0-.6.1-.9.4-.3.3-1.2 1.1-1.2 2.8s1.2 3.2 1.4 3.5c.2.2 2.4 3.7 5.9 5.1 2.2.9 3 1 4.1.9.7-.1 1.9-.8 2.2-1.5.3-.7.3-1.4.2-1.5-.1-.2-.3-.3-.6-.4z"/></svg></a>
+        </div>
+        <a href="#WHATSAPP#" class="btn btn-wa wa-cta" target="_blank" rel="noopener" style="width:100%;justify-content:center">
+          <svg viewBox="0 0 32 32" width="20" height="20" fill="currentColor"><path d="M16 3C9 3 3.5 8.5 3.5 15.5c0 2.3.6 4.4 1.7 6.3L3 29l7.4-2.1c1.8 1 3.9 1.5 6 1.5 7 0 12.5-5.5 12.5-12.5S23 3 16 3z"/></svg>
+          <span data-i18n="contact_wa_btn">Rezervă acum pe WhatsApp</span>
+        </a>
+      </div>
+      <div class="map-embed reveal">
+        <iframe title="Casa din Deal Santău" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+          src="https://www.google.com/maps?q=Sant%C4%83u%2C%20Satu%20Mare%2C%20Romania&output=embed"></iframe>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <a href="#top" class="brand"><span class="mark"><img src="images/logo.png" alt="Casa din Deal logó"></span><span><b>Casa din Deal</b><small>Santău</small></span></a>
+        <p data-i18n="foot_about">Casă de vacanță pe deal la Santău — cazare, evenimente și wellness în mijlocul naturii.</p>
+      </div>
+      <div class="foot-col">
+        <h4 data-i18n="foot_nav">Navigare</h4>
+        <a href="#about" data-i18n="nav_about">Despre</a>
+        <a href="#cazare" data-i18n="nav_stay">Cazare</a>
+        <a href="#wellness" data-i18n="nav_wellness">Wellness</a>
+        <a href="#evenimente" data-i18n="nav_events">Evenimente</a>
+        <a href="#galerie" data-i18n="nav_gallery">Galerie</a>
+      </div>
+      <div class="foot-col">
+        <h4 data-i18n="foot_legal">Legal</h4>
+        <button data-modal="mImpr" data-i18n="foot_impr">Date firmă</button>
+        <button data-modal="mPriv" data-i18n="foot_priv">Politica de confidențialitate</button>
+        <button data-modal="mCookie" data-i18n="foot_cookie">Politica de cookie-uri</button>
+        <button data-modal="mTerms" data-i18n="foot_terms">Termeni & condiții</button>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© <span id="year"></span> Casa din Deal · Santău. <span data-i18n="foot_rights">Toate drepturile rezervate.</span></span>
+      <span data-i18n="foot_made">Realizat cu grijă · <a href="#WHATSAPP#" target="_blank" rel="noopener">WhatsApp</a></span>
+    </div>
+  </div>
+</footer>
+
+<!-- ============ FLOATING WA ============ -->
+<a href="#WHATSAPP#" class="wa-float" id="waFloat" target="_blank" rel="noopener" aria-label="WhatsApp">
+  <svg viewBox="0 0 32 32"><path d="M16 3C9 3 3.5 8.5 3.5 15.5c0 2.3.6 4.4 1.7 6.3L3 29l7.4-2.1c1.8 1 3.9 1.5 6 1.5 7 0 12.5-5.5 12.5-12.5S23 3 16 3zm5.8 15c-.3-.2-1.9-.9-2.2-1-.3-.1-.5-.2-.7.2s-.8 1-1 1.2c-.2.2-.4.2-.7.1-1.9-.9-3.1-1.7-4.4-3.8-.3-.6.3-.5.9-1.7.1-.2 0-.4 0-.6s-.7-1.7-1-2.3c-.3-.6-.5-.5-.7-.5h-.6c-.2 0-.6.1-.9.4-.3.3-1.2 1.1-1.2 2.8s1.2 3.2 1.4 3.5c.2.2 2.4 3.7 5.9 5.1 2.2.9 3 1 4.1.9.7-.1 1.9-.8 2.2-1.5.3-.7.3-1.4.2-1.5-.1-.2-.3-.3-.6-.4z"/></svg>
+</a>
+
+<!-- ============ COOKIE BANNER ============ -->
+<div class="cookie" id="cookie">
+  <div class="cookie-inner">
+    <p data-i18n="cookie_text">Folosim doar cookie-uri esențiale pentru funcționarea site-ului. Continuând, ești de acord cu <a href="#" data-modal="mCookie">politica de cookie-uri</a>.</p>
+    <div class="cookie-btns">
+      <button class="btn btn-mini-ghost" id="cookieReject" data-i18n="cookie_reject">Doar esențiale</button>
+      <button class="btn btn-primary" id="cookieAccept" data-i18n="cookie_accept">Accept</button>
+    </div>
+  </div>
+</div>
+
+<!-- ============ LEGAL MODALS ============ -->
+<div class="modal" id="mImpr"><div class="modal-box"><span class="mclose">×</span>
+  <h3 data-i18n="impr_t">Date de identificare</h3>
+  <p data-i18n="impr_p">Datele oficiale ale firmei vor fi completate aici.</p>
+  <h4 data-i18n="impr_h1">Denumire</h4><p>Casa din Deal — Santău</p>
+  <h4 data-i18n="impr_h2">Adresă</h4><p>Santău, jud. Satu Mare, România</p>
+  <h4 data-i18n="impr_h3">Contact</h4><p>#PHONE_DISPLAY# · WhatsApp</p>
+  <h4 data-i18n="impr_h4">CUI / Reg. Com.</h4><p data-i18n="impr_cui">— de completat —</p>
+</div></div>
+
+<div class="modal" id="mPriv"><div class="modal-box"><span class="mclose">×</span>
+  <h3 data-i18n="priv_t">Politica de confidențialitate</h3>
+  <p data-i18n="priv_p1">Respectăm confidențialitatea vizitatorilor noștri. Acest site de prezentare nu colectează date personale prin formulare.</p>
+  <h4 data-i18n="priv_h1">Ce date colectăm</h4>
+  <p data-i18n="priv_p2">Site-ul nu are formulare de contact. Comunicarea are loc direct prin WhatsApp, telefon sau rețele sociale, conform politicilor acelor platforme.</p>
+  <h4 data-i18n="priv_h2">Cookie-uri</h4>
+  <p data-i18n="priv_p3">Folosim doar cookie-uri strict necesare. Vezi politica de cookie-uri pentru detalii.</p>
+  <h4 data-i18n="priv_h3">Drepturile tale</h4>
+  <p data-i18n="priv_p4">Conform GDPR, ai dreptul de acces, rectificare și ștergere a datelor. Ne poți contacta oricând.</p>
+</div></div>
+
+<div class="modal" id="mCookie"><div class="modal-box"><span class="mclose">×</span>
+  <h3 data-i18n="cookie_t">Politica de cookie-uri</h3>
+  <p data-i18n="cookie_p1">Acest site folosește un set minim de cookie-uri pentru a funcționa corect.</p>
+  <h4 data-i18n="cookie_h1">Cookie-uri esențiale</h4>
+  <p data-i18n="cookie_p2">Rețin preferința ta de limbă și alegerea privind cookie-urile. Fără ele, site-ul nu ar funcționa corect.</p>
+  <h4 data-i18n="cookie_h2">Cookie-uri de la terți</h4>
+  <p data-i18n="cookie_p3">Harta Google Maps și butoanele către rețelele sociale pot seta cookie-uri proprii, conform politicilor lor.</p>
+</div></div>
+
+<div class="modal" id="mTerms"><div class="modal-box"><span class="mclose">×</span>
+  <h3 data-i18n="terms_t">Termeni & condiții</h3>
+  <p data-i18n="terms_p1">Informațiile de pe acest site au caracter de prezentare. Disponibilitatea, prețurile și condițiile de rezervare se confirmă direct, prin WhatsApp sau telefon.</p>
+  <p data-i18n="terms_p2">Imaginile au caracter ilustrativ. Ne rezervăm dreptul de a actualiza conținutul oricând.</p>
+</div></div>
+
+<script>
+/* ============ TRANSLATIONS ============ */
+const I18N={
+ro:{
+ nav_about:"Despre",nav_stay:"Cazare",nav_wellness:"Wellness",nav_events:"Evenimente",nav_gallery:"Galerie",nav_contact:"Contact",nav_book:"Rezervare",
+ hero_eyebrow:"Casă de închiriat · Santău",hero_h1:"Casa din Deal",hero_tag:"Cazare, evenimente și relaxare",
+ hero_lead:"O casă spațioasă de închiriat în Santău, cu piscină, jacuzzi și curte mare — numai bună pentru vacanțe, petreceri și evenimente cu familia sau prietenii.",
+ hero_wa:"Rezervă pe WhatsApp",hero_gallery:"Vezi galeria",scroll:"Scroll",
+ fact_1:"Casa întreagă pentru tine",fact_2:"Piscină & jacuzzi",fact_3:"Petreceri & evenimente",fact_4:"Curte & terasă",
+ about_eyebrow:"Bine ai venit",about_title:"O casă de închiriat în Santău",
+ about_p1:"Casa din Deal este o casă spațioasă pe care o poți închiria integral, cu tot confortul de acasă: camere primitoare, bucătărie complet utilată, living generos și o curte mare cu piscină.",
+ about_p2:"Numai bună pentru o vacanță în familie, o petrecere cu prietenii sau un eveniment special — te simți ca acasă, în Santău.",
+ about_badge_b:"2022",about_badge_s:"Te așteptăm din 2022",
+ about_f1:"<b>Casa întreagă</b> — o închiriezi integral, doar pentru grupul tău.",
+ about_f2:"<b>Piscină & jacuzzi</b> — în curte, pentru zile de vară și seri relaxante.",
+ about_f3:"<b>Curte mare & terasă</b> — grătar, foc și spațiu pentru petreceri.",
+ offer_eyebrow:"Ce găsești aici",offer_title:"Tot ce ai nevoie",offer_sub:"Cazare, relaxare și spațiu de petreceri — totul într-un singur loc.",
+ tag_stay:"Cazare",tag_wellness:"Relaxare",tag_events:"Evenimente",more:"Detalii →",
+ card1_t:"Cazare confortabilă",card1_p:"Camere primitoare și bucătărie complet utilată, cu tot confortul pentru un sejur relaxat.",
+ card2_t:"Piscină & jacuzzi",card2_p:"Piscină în curte și jacuzzi, pentru zile însorite și seri plăcute.",
+ card3_t:"Petreceri & evenimente",card3_p:"Spațiu numai bun pentru aniversări, petreceri și evenimente private.",
+ stay_eyebrow:"Cazare",stay_title:"Camere confortabile, ca acasă",
+ stay_p1:"Camerele calde și bucătăria complet utilată îți oferă tot ce ai nevoie pentru un sejur fără griji. Mult spațiu și confort modern.",
+ stay_f1:"<b>Camere confortabile</b> pentru grupuri și familii.",stay_f2:"<b>Bucătărie complet utilată</b> și living generos.",stay_f3:"<b>Wi-Fi, parcare</b> și tot confortul necesar.",
+ stay_cta:"Verifică disponibilitatea",
+ wellness_eyebrow:"Piscină & Relaxare",wellness_title:"Piscină & jacuzzi în curte",
+ wellness_p:"Ziua te răcorești în piscină, seara te relaxezi în jacuzzi. Curtea mare e numai bună pentru grătar și timp petrecut împreună.",
+ wellness_s1:"Piscină în curte",wellness_s2:"Jacuzzi",wellness_s3:"Grătar & foc",
+ events_eyebrow:"Evenimente & Petreceri",events_title:"Locul potrivit pentru petrecerea ta",
+ events_p1:"Aniversări, petreceri sau întâlniri cu prietenii — ai casa întreagă și curtea la dispoziție, în intimitate.",
+ events_p2:"Spune-ne ce plănuiești și găsim împreună varianta potrivită.",
+ events_badge_b:"100%",events_badge_s:"Intimitate pentru evenimentul tău",
+ events_f1:"<b>Casa întreagă</b> — doar tu și invitații tăi.",events_f2:"<b>Grătar & foc</b> pentru serile lungi.",events_f3:"<b>Curte mare</b> cu spațiu pentru petreceri.",
+ gallery_eyebrow:"Galerie",gallery_title:"Momente de la Casa din Deal",gallery_sub:"Câteva imagini cu casa, curtea și piscina.",
+ vibe_eyebrow:"De ce noi",vibe_title:"De ce să alegi Casa din Deal",vibe_sub:"Simplu: o casă întreagă, confortabilă, numai bună pentru relaxare și petreceri.",
+ vibe1_t:"Casa întreagă",vibe1_p:"O închiriezi integral — fără vecini, doar grupul tău.",
+ vibe2_t:"Piscină & jacuzzi",vibe2_p:"Relaxare în curte, vara și în serile răcoroase.",
+ vibe3_t:"Bucătărie utilată",vibe3_p:"Gătești ca acasă, cu tot ce ai nevoie.",
+ vibe4_t:"Curte mare",vibe4_p:"Spațiu pentru grătar, joacă și petreceri.",
+ vibe5_t:"Bună pentru petreceri",vibe5_p:"Intimitate și loc suficient pentru evenimentele tale.",
+ vibe6_t:"Confort ca acasă",vibe6_p:"Tot ce ai nevoie ca să te simți bine.",
+ contact_eyebrow:"Rezervări & Contact",contact_title:"Rezervă-ți sejurul",contact_sub:"Scrie-ne pe WhatsApp pentru rezervări și disponibilitate — răspundem rapid.",
+ contact_card_t:"Date de contact",contact_loc_b:"Locație",contact_loc_s:"Santău, jud. Satu Mare, România",
+ contact_phone_b:"Telefon",contact_wa:"Scrie-ne pe WhatsApp",contact_social_b:"Social media",contact_social_s:"Urmărește-ne pentru noutăți",contact_wa_btn:"Rezervă acum pe WhatsApp",
+ foot_about:"Casă de închiriat în Santău — cazare, piscină, jacuzzi și spațiu pentru evenimente.",
+ foot_nav:"Navigare",foot_legal:"Legal",foot_impr:"Date firmă",foot_priv:"Politica de confidențialitate",foot_cookie:"Politica de cookie-uri",foot_terms:"Termeni & condiții",
+ foot_rights:"Toate drepturile rezervate.",foot_made:"Realizat cu grijă",
+ cookie_text:"Folosim doar cookie-uri esențiale pentru funcționarea site-ului. Continuând, ești de acord cu politica de cookie-uri.",
+ cookie_reject:"Doar esențiale",cookie_accept:"Accept",
+ impr_t:"Date de identificare",impr_p:"Datele oficiale ale firmei vor fi completate aici.",impr_h1:"Denumire",impr_h2:"Adresă",impr_h3:"Contact",impr_h4:"CUI / Reg. Com.",impr_cui:"— de completat —",
+ priv_t:"Politica de confidențialitate",priv_p1:"Respectăm confidențialitatea vizitatorilor noștri. Acest site de prezentare nu colectează date personale prin formulare.",
+ priv_h1:"Ce date colectăm",priv_p2:"Site-ul nu are formulare de contact. Comunicarea are loc direct prin WhatsApp, telefon sau rețele sociale, conform politicilor acelor platforme.",
+ priv_h2:"Cookie-uri",priv_p3:"Folosim doar cookie-uri strict necesare. Vezi politica de cookie-uri pentru detalii.",
+ priv_h3:"Drepturile tale",priv_p4:"Conform GDPR, ai dreptul de acces, rectificare și ștergere a datelor. Ne poți contacta oricând.",
+ cookie_t:"Politica de cookie-uri",cookie_p1:"Acest site folosește un set minim de cookie-uri pentru a funcționa corect.",
+ cookie_h1:"Cookie-uri esențiale",cookie_p2:"Rețin preferința ta de limbă și alegerea privind cookie-urile. Fără ele, site-ul nu ar funcționa corect.",
+ cookie_h2:"Cookie-uri de la terți",cookie_p3:"Harta Google Maps și butoanele către rețelele sociale pot seta cookie-uri proprii, conform politicilor lor.",
+ terms_t:"Termeni & condiții",terms_p1:"Informațiile de pe acest site au caracter de prezentare. Disponibilitatea, prețurile și condițiile de rezervare se confirmă direct, prin WhatsApp sau telefon.",
+ terms_p2:"Imaginile au caracter ilustrativ. Ne rezervăm dreptul de a actualiza conținutul oricând."
+},
+hu:{
+ nav_about:"Rólunk",nav_stay:"Szállás",nav_wellness:"Wellness",nav_events:"Rendezvények",nav_gallery:"Galéria",nav_contact:"Kapcsolat",nav_book:"Foglalás",
+ hero_eyebrow:"Kiadó vendégház · Santău",hero_h1:"Casa din Deal",hero_tag:"Szállás, rendezvények, pihenés",
+ hero_lead:"Tágas, egyben kivehető vendégház Santău-n, medencével, jacuzzival és nagy udvarral — nyaraláshoz, bulikhoz és családi vagy baráti eseményekhez.",
+ hero_wa:"Foglalj WhatsAppon",hero_gallery:"Galéria megtekintése",scroll:"Görgess",
+ fact_1:"Az egész ház a tiéd",fact_2:"Medence & jacuzzi",fact_3:"Bulik & rendezvények",fact_4:"Udvar & terasz",
+ about_eyebrow:"Üdvözlünk",about_title:"Kiadó vendégház Santău-n",
+ about_p1:"A Casa din Deal egy tágas ház, amelyet egyben kivehetsz, otthonos kényelemmel: barátságos szobák, teljesen felszerelt konyha, nagy nappali és tágas udvar medencével.",
+ about_p2:"Tökéletes családi nyaraláshoz, baráti bulihoz vagy egy különleges eseményhez — otthonosan, Santău-n.",
+ about_badge_b:"2022",about_badge_s:"2022 óta várunk",
+ about_f1:"<b>Az egész ház</b> — egyben bérelhető, csak a te társaságodnak.",
+ about_f2:"<b>Medence & jacuzzi</b> — az udvarban, nyári napokhoz és pihentető estékhez.",
+ about_f3:"<b>Nagy udvar & terasz</b> — grill, tűz és hely a bulikhoz.",
+ offer_eyebrow:"Amit itt találsz",offer_title:"Minden, amire szükséged van",offer_sub:"Szállás, pihenés és bulizóhely — mind egy helyen.",
+ tag_stay:"Szállás",tag_wellness:"Pihenés",tag_events:"Rendezvények",more:"Részletek →",
+ card1_t:"Kényelmes szállás",card1_p:"Barátságos szobák és teljesen felszerelt konyha, minden kényelemmel a pihentető pihenéshez.",
+ card2_t:"Medence & jacuzzi",card2_p:"Medence az udvarban és jacuzzi, napsütéses napokhoz és kellemes estékhez.",
+ card3_t:"Bulik & rendezvények",card3_p:"Kiváló hely szülinapokhoz, bulikhoz és privát eseményekhez.",
+ stay_eyebrow:"Szállás",stay_title:"Kényelmes szobák, mint otthon",
+ stay_p1:"A meleg szobák és a teljesen felszerelt konyha mindent megadnak egy gondtalan pihenéshez. Sok tér és modern kényelem.",
+ stay_f1:"<b>Kényelmes szobák</b> csoportoknak és családoknak.",stay_f2:"<b>Teljesen felszerelt konyha</b> és tágas nappali.",stay_f3:"<b>Wi-Fi, parkoló</b> és minden szükséges kényelem.",
+ stay_cta:"Szabad időpont egyeztetése",
+ wellness_eyebrow:"Medence & Pihenés",wellness_title:"Medence és jacuzzi az udvarban",
+ wellness_p:"Nappal a medencében hűsölsz, este a jacuzziban lazítasz. A nagy udvar tökéletes grillezéshez és közös időtöltéshez.",
+ wellness_s1:"Medence az udvarban",wellness_s2:"Jacuzzi",wellness_s3:"Grill & tűz",
+ events_eyebrow:"Rendezvények & Bulik",events_title:"A megfelelő hely a bulidhoz",
+ events_p1:"Szülinapok, bulik vagy baráti találkozók — az egész ház és az udvar a tiéd, teljes nyugalomban.",
+ events_p2:"Mondd el, mit tervezel, és együtt megtaláljuk a megfelelő megoldást.",
+ events_badge_b:"100%",events_badge_s:"Teljes privátszféra az eseményedhez",
+ events_f1:"<b>Az egész ház</b> — csak te és a vendégeid.",events_f2:"<b>Grill & tűz</b> a hosszú estékhez.",events_f3:"<b>Nagy udvar</b> bőven hellyel a bulikhoz.",
+ gallery_eyebrow:"Galéria",gallery_title:"Pillanatok a Casa din Dealből",gallery_sub:"Néhány kép a házról, az udvarról és a medencéről.",
+ vibe_eyebrow:"Miért mi",vibe_title:"Miért a Casa din Deal",vibe_sub:"Egyszerűen: egy egész ház, kényelmesen, pihenéshez és bulikhoz.",
+ vibe1_t:"Az egész ház",vibe1_p:"Egyben bérelhető — nincs idegen, csak a te társaságod.",
+ vibe2_t:"Medence & jacuzzi",vibe2_p:"Kikapcsolódás az udvarban, nyáron és hűvös estéken.",
+ vibe3_t:"Felszerelt konyha",vibe3_p:"Úgy főzöl, mint otthon, mindennel, ami kell.",
+ vibe4_t:"Nagy udvar",vibe4_p:"Hely a grillezéshez, játékhoz és bulikhoz.",
+ vibe5_t:"Bulikra kiváló",vibe5_p:"Privátszféra és elég hely az eseményeidhez.",
+ vibe6_t:"Otthonos kényelem",vibe6_p:"Minden megvan, hogy jól érezd magad.",
+ contact_eyebrow:"Foglalás & Kapcsolat",contact_title:"Foglald le a pihenésed",contact_sub:"Írj nekünk WhatsAppon foglalásért és szabad időpontokért — gyorsan válaszolunk.",
+ contact_card_t:"Elérhetőségek",contact_loc_b:"Helyszín",contact_loc_s:"Szántó (Santău), Szatmár megye, Románia",
+ contact_phone_b:"Telefon",contact_wa:"Írj nekünk WhatsAppon",contact_social_b:"Közösségi média",contact_social_s:"Kövess minket a hírekért",contact_wa_btn:"Foglalj most WhatsAppon",
+ foot_about:"Kiadó vendégház Santău-n — szállás, medence, jacuzzi és hely a rendezvényekhez.",
+ foot_nav:"Menü",foot_legal:"Jogi",foot_impr:"Cégadatok",foot_priv:"Adatvédelmi tájékoztató",foot_cookie:"Süti tájékoztató",foot_terms:"Felhasználási feltételek",
+ foot_rights:"Minden jog fenntartva.",foot_made:"Gonddal készült",
+ cookie_text:"Csak az oldal működéséhez szükséges sütiket használunk. A folytatással elfogadod a süti tájékoztatót.",
+ cookie_reject:"Csak a szükségeseket",cookie_accept:"Elfogadom",
+ impr_t:"Cégadatok",impr_p:"A hivatalos cégadatok ide kerülnek.",impr_h1:"Név",impr_h2:"Cím",impr_h3:"Kapcsolat",impr_h4:"Adószám / Cégjegyzék",impr_cui:"— kitöltendő —",
+ priv_t:"Adatvédelmi tájékoztató",priv_p1:"Tiszteletben tartjuk látogatóink adatait. Ez a bemutatkozó oldal nem gyűjt személyes adatot űrlapon keresztül.",
+ priv_h1:"Milyen adatokat gyűjtünk",priv_p2:"Az oldalon nincs kapcsolatfelvételi űrlap. A kommunikáció közvetlenül WhatsAppon, telefonon vagy közösségi médián keresztül történik, azok saját szabályzata szerint.",
+ priv_h2:"Sütik",priv_p3:"Csak a feltétlenül szükséges sütiket használjuk. Részletek a süti tájékoztatóban.",
+ priv_h3:"A jogaid",priv_p4:"A GDPR szerint jogod van az adataidhoz való hozzáféréshez, azok helyesbítéséhez és törléséhez. Bármikor kereshetsz minket.",
+ cookie_t:"Süti tájékoztató",cookie_p1:"Ez az oldal minimális mennyiségű sütit használ a helyes működéshez.",
+ cookie_h1:"Szükséges sütik",cookie_p2:"Eltárolják a nyelvi beállításodat és a sütikkel kapcsolatos döntésedet. Nélkülük az oldal nem működne helyesen.",
+ cookie_h2:"Harmadik féltől származó sütik",cookie_p3:"A Google Maps térkép és a közösségi média gombok saját sütiket állíthatnak be, azok szabályzata szerint.",
+ terms_t:"Felhasználási feltételek",terms_p1:"Az oldalon szereplő információk tájékoztató jellegűek. A szabad időpontokat, árakat és foglalási feltételeket közvetlenül, WhatsAppon vagy telefonon erősítjük meg.",
+ terms_p2:"A képek illusztrációk. Fenntartjuk a jogot a tartalom bármikori frissítésére."
+},
+en:{
+ nav_about:"About",nav_stay:"Stay",nav_wellness:"Wellness",nav_events:"Events",nav_gallery:"Gallery",nav_contact:"Contact",nav_book:"Book",
+ hero_eyebrow:"Guesthouse for rent · Santău",hero_h1:"Casa din Deal",hero_tag:"Stays, events and relaxation",
+ hero_lead:"A spacious guesthouse for rent in Santău, with a pool, jacuzzi and large yard — perfect for holidays, parties and events with family or friends.",
+ hero_wa:"Book on WhatsApp",hero_gallery:"View gallery",scroll:"Scroll",
+ fact_1:"The whole house for you",fact_2:"Pool & jacuzzi",fact_3:"Parties & events",fact_4:"Yard & terrace",
+ about_eyebrow:"Welcome",about_title:"A guesthouse for rent in Santău",
+ about_p1:"Casa din Deal is a spacious house you can rent in full, with all the comforts of home: welcoming rooms, a fully equipped kitchen, a generous living room and a large yard with a pool.",
+ about_p2:"Perfect for a family holiday, a party with friends or a special event — feel at home, in Santău.",
+ about_badge_b:"2022",about_badge_s:"Welcoming guests since 2022",
+ about_f1:"<b>The whole house</b> — rent it in full, just for your group.",
+ about_f2:"<b>Pool & jacuzzi</b> — in the yard, for summer days and relaxing evenings.",
+ about_f3:"<b>Large yard & terrace</b> — BBQ, fire and space for parties.",
+ offer_eyebrow:"What you'll find",offer_title:"Everything you need",offer_sub:"Accommodation, relaxation and party space — all in one place.",
+ tag_stay:"Stay",tag_wellness:"Relax",tag_events:"Events",more:"Details →",
+ card1_t:"Comfortable stay",card1_p:"Welcoming rooms and a fully equipped kitchen, with all the comfort for a relaxed stay.",
+ card2_t:"Pool & jacuzzi",card2_p:"A pool in the yard and a jacuzzi, for sunny days and pleasant evenings.",
+ card3_t:"Parties & events",card3_p:"A great space for birthdays, parties and private events.",
+ stay_eyebrow:"Stay",stay_title:"Comfortable rooms, just like home",
+ stay_p1:"Warm rooms and a fully equipped kitchen give you everything for a carefree stay. Plenty of space and modern comfort.",
+ stay_f1:"<b>Comfortable rooms</b> for groups and families.",stay_f2:"<b>Fully equipped kitchen</b> and a generous living area.",stay_f3:"<b>Wi-Fi, parking</b> and all the comfort you need.",
+ stay_cta:"Check availability",
+ wellness_eyebrow:"Pool & Relaxation",wellness_title:"Pool & jacuzzi in the yard",
+ wellness_p:"Cool off in the pool by day, relax in the jacuzzi in the evening. The large yard is perfect for a BBQ and time together.",
+ wellness_s1:"Pool in the yard",wellness_s2:"Jacuzzi",wellness_s3:"BBQ & fire",
+ events_eyebrow:"Events & Parties",events_title:"The right place for your party",
+ events_p1:"Birthdays, parties or get-togethers with friends — the whole house and yard are yours, in privacy.",
+ events_p2:"Tell us what you're planning and we'll find the right option together.",
+ events_badge_b:"100%",events_badge_s:"Privacy for your event",
+ events_f1:"<b>The whole house</b> — just you and your guests.",events_f2:"<b>BBQ & fire</b> for long evenings.",events_f3:"<b>Large yard</b> with space for parties.",
+ gallery_eyebrow:"Gallery",gallery_title:"Moments at Casa din Deal",gallery_sub:"A few photos of the house, the yard and the pool.",
+ vibe_eyebrow:"Why us",vibe_title:"Why choose Casa din Deal",vibe_sub:"Simply put: a whole house, comfortable, great for relaxing and parties.",
+ vibe1_t:"The whole house",vibe1_p:"Rent it in full — no strangers, just your group.",
+ vibe2_t:"Pool & jacuzzi",vibe2_p:"Relax in the yard, in summer and on cool evenings.",
+ vibe3_t:"Equipped kitchen",vibe3_p:"Cook like at home, with everything you need.",
+ vibe4_t:"Large yard",vibe4_p:"Room for a BBQ, playing and parties.",
+ vibe5_t:"Great for parties",vibe5_p:"Privacy and plenty of room for your events.",
+ vibe6_t:"Comfort like home",vibe6_p:"Everything you need to feel good.",
+ contact_eyebrow:"Booking & Contact",contact_title:"Book your stay",contact_sub:"Message us on WhatsApp for bookings and availability — we reply fast.",
+ contact_card_t:"Contact details",contact_loc_b:"Location",contact_loc_s:"Santău, Satu Mare county, Romania",
+ contact_phone_b:"Phone",contact_wa:"Message us on WhatsApp",contact_social_b:"Social media",contact_social_s:"Follow us for news",contact_wa_btn:"Book now on WhatsApp",
+ foot_about:"Guesthouse for rent in Santău — stays, pool, jacuzzi and space for events.",
+ foot_nav:"Navigation",foot_legal:"Legal",foot_impr:"Company details",foot_priv:"Privacy policy",foot_cookie:"Cookie policy",foot_terms:"Terms & conditions",
+ foot_rights:"All rights reserved.",foot_made:"Made with care",
+ cookie_text:"We only use essential cookies for the site to work. By continuing, you agree to the cookie policy.",
+ cookie_reject:"Essential only",cookie_accept:"Accept",
+ impr_t:"Company details",impr_p:"Official company details will be added here.",impr_h1:"Name",impr_h2:"Address",impr_h3:"Contact",impr_h4:"Reg. number",impr_cui:"— to be completed —",
+ priv_t:"Privacy policy",priv_p1:"We respect our visitors' privacy. This presentation site does not collect personal data through forms.",
+ priv_h1:"What data we collect",priv_p2:"The site has no contact forms. Communication happens directly via WhatsApp, phone or social media, under those platforms' policies.",
+ priv_h2:"Cookies",priv_p3:"We only use strictly necessary cookies. See the cookie policy for details.",
+ priv_h3:"Your rights",priv_p4:"Under GDPR, you have the right to access, rectify and erase your data. You can contact us anytime.",
+ cookie_t:"Cookie policy",cookie_p1:"This site uses a minimal set of cookies to work correctly.",
+ cookie_h1:"Essential cookies",cookie_p2:"They store your language preference and your cookie choice. Without them, the site wouldn't work properly.",
+ cookie_h2:"Third-party cookies",cookie_p3:"The Google Maps map and the social media buttons may set their own cookies, under their policies.",
+ terms_t:"Terms & conditions",terms_p1:"The information on this site is for presentation. Availability, prices and booking conditions are confirmed directly, via WhatsApp or phone.",
+ terms_p2:"Images are illustrative. We reserve the right to update the content at any time."
+}
+};
+
+/* ============ CONFIG: PHONE / WHATSAPP ============ */
+/* !!! ITT ÁLLÍTSD BE A VALÓDI TELEFONSZÁMOT !!! nemzetközi formátum, + és 00 nélkül. Pl. Románia: 40740123456 */
+const PHONE_INTL="40747637077";            // Casa din Deal
+const PHONE_DISPLAY="+40 747 637 077";     // megjelenített formátum
+const WA_MSG={
+  ro:"Bună! Aș dori o rezervare la Casa din Deal.",
+  hu:"Üdv! Szeretnék foglalni a Casa din Deal-nél.",
+  en:"Hi! I'd like to book at Casa din Deal."
+};
+
+/* ============ I18N ENGINE ============ */
+function setLang(lang){
+  document.documentElement.lang=lang;
+  document.querySelectorAll("[data-i18n]").forEach(el=>{
+    const k=el.getAttribute("data-i18n");
+    if(I18N[lang]&&I18N[lang][k]!=null) el.innerHTML=I18N[lang][k];
+  });
+  document.querySelectorAll("#lang button").forEach(b=>b.classList.toggle("active",b.dataset.lang===lang));
+  // WhatsApp linkek frissítése az adott nyelvű üzenettel
+  const wa="https://wa.me/"+PHONE_INTL+"?text="+encodeURIComponent(WA_MSG[lang]||WA_MSG.ro);
+  document.querySelectorAll('[href="#WHATSAPP#"]').forEach(a=>a.setAttribute("href",wa));
+  try{localStorage.setItem("cdd_lang",lang);}catch(e){}
+}
+// telefon szöveg csere (statikus helyek)
+function fillPhoneText(){
+  document.querySelectorAll("a,p").forEach(el=>{
+    if(el.innerHTML.includes("#PHONE_DISPLAY#")) el.innerHTML=el.innerHTML.replaceAll("#PHONE_DISPLAY#",PHONE_DISPLAY);
+  });
+  document.querySelectorAll('a[href="tel:#PHONE#"]').forEach(a=>a.setAttribute("href","tel:+"+PHONE_INTL));
+}
+
+document.addEventListener("DOMContentLoaded",()=>{
+  fillPhoneText();
+  let saved="ro";try{saved=localStorage.getItem("cdd_lang")||"ro";}catch(e){}
+  setLang(saved);
+  document.querySelectorAll("#lang button").forEach(b=>b.addEventListener("click",()=>setLang(b.dataset.lang)));
+  document.getElementById("year").textContent=new Date().getFullYear();
+
+  /* nav scroll */
+  const nav=document.getElementById("nav");
+  const onScroll=()=>nav.classList.toggle("scrolled",window.scrollY>60);
+  onScroll();window.addEventListener("scroll",onScroll);
+
+  /* burger */
+  const burger=document.getElementById("burger"),navLinks=document.getElementById("navLinks");
+  burger.addEventListener("click",()=>navLinks.classList.toggle("open"));
+  navLinks.querySelectorAll("a").forEach(a=>a.addEventListener("click",()=>navLinks.classList.remove("open")));
+
+  /* reveal */
+  const io=new IntersectionObserver((es)=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add("in");io.unobserve(e.target);}})},{threshold:.14});
+  document.querySelectorAll(".reveal").forEach(el=>io.observe(el));
+
+  /* gallery lightbox */
+  const lb=document.getElementById("lightbox"),lbImg=document.getElementById("lbImg");
+  const items=[...document.querySelectorAll("#gallery a")];let idx=0;
+  const open=i=>{idx=i;lbImg.src=items[i].dataset.full;lb.classList.add("open");};
+  const close=()=>lb.classList.remove("open");
+  items.forEach((a,i)=>a.addEventListener("click",e=>{e.preventDefault();open(i);}));
+  document.getElementById("lbClose").addEventListener("click",close);
+  document.getElementById("lbNext").addEventListener("click",()=>open((idx+1)%items.length));
+  document.getElementById("lbPrev").addEventListener("click",()=>open((idx-1+items.length)%items.length));
+  lb.addEventListener("click",e=>{if(e.target===lb)close();});
+  document.addEventListener("keydown",e=>{if(!lb.classList.contains("open"))return;if(e.key==="Escape")close();if(e.key==="ArrowRight")open((idx+1)%items.length);if(e.key==="ArrowLeft")open((idx-1+items.length)%items.length);});
+
+  /* cookie */
+  const cookie=document.getElementById("cookie");
+  let ck=null;try{ck=localStorage.getItem("cdd_cookie");}catch(e){}
+  if(!ck) setTimeout(()=>cookie.classList.add("show"),900);
+  const setCk=v=>{try{localStorage.setItem("cdd_cookie",v);}catch(e){}cookie.classList.remove("show");};
+  document.getElementById("cookieAccept").addEventListener("click",()=>setCk("all"));
+  document.getElementById("cookieReject").addEventListener("click",()=>setCk("essential"));
+
+  /* modals */
+  document.querySelectorAll("[data-modal]").forEach(t=>t.addEventListener("click",e=>{e.preventDefault();const m=document.getElementById(t.dataset.modal);if(m)m.classList.add("open");}));
+  document.querySelectorAll(".modal").forEach(m=>{
+    m.addEventListener("click",e=>{if(e.target===m)m.classList.remove("open");});
+    const c=m.querySelector(".mclose");if(c)c.addEventListener("click",()=>m.classList.remove("open"));
+  });
+});
+</script>
+</body>
+</html>
